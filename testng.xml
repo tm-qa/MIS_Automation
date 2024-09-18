@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="/Users/hemant/Downloads/MintproSanityAutomation/src/test/java/com/qa/turtlemint/testcases">
+        <method-selectors>
+            <method-selector>
+                <script language="beanshell">
+                    <![CDATA[
+                    String myTestGroup = System.getProperty("groupName");
+                    groups.containsKey(myTestGroup);
+                ]]>
+                </script>
+            </method-selector>
+        </method-selectors>
+
+                <groups>
+                    <run>
+                        <include name="${groupName}"></include>
+                    </run>
+                </groups>
+        <classes>
+            <class name="Ninja_BI.BI_Flow"/>
+            <class name="Ninja_BI.BI_Dashboard_test"/>
+            <class name="Mintpro_CI.CI_Life_Test"/>
+            <class name="NinjaCIDashboardTest.NinjaCIDashboardTestCase"/>
+            <class name="QuotesRequestTest.FWandCVQuotesRequestTest"/>
+        </classes>
+
+    </test>
+</suite>
