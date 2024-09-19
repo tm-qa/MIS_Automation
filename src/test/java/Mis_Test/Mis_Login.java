@@ -31,7 +31,7 @@ public class Mis_Login extends TestBase {
     @Test()
     public void PaymentModeFilterTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        junkpolicyl.JunkPolicy("MIS_MHERMOWYHA8");
+        junkpolicyl.JunkPolicy("policy entered");
 
     }
 
