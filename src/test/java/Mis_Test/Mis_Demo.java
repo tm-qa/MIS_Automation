@@ -1,6 +1,7 @@
 package Mis_Test;
 
 import com.qa.turtlemint.base.TestBase;
+import com.qa.turtlemint.pages.common.Mis_newSale;
 import com.qa.turtlemint.pages.common.junk;
 import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.util.iTestListener;
@@ -12,12 +13,13 @@ import org.testng.annotations.Test;
 
 @Listeners(iTestListener.class)
 @Test(groups = {"Ninja_Full", "mis_login"})
-public class Mis_Login extends TestBase {
+public class Mis_Demo extends TestBase {
 
     public LoginPage ninjaloginpage;
     public junk junkpolicyl;
+    public Mis_newSale create;
 
-    public Mis_Login() {super();}
+    public Mis_Demo() {super();}
 
     @BeforeMethod()
     public void start()  {
@@ -25,16 +27,21 @@ public class Mis_Login extends TestBase {
 
         ninjaloginpage = new LoginPage();
         junkpolicyl = new junk();
+        create = new Mis_newSale();
 
     }
 
     @Test()
-    public void PaymentModeFilterTest() throws Exception {
+    public void CreatePolicy() throws Exception {
         ninjaloginpage.ninja_MIS();
+        create.productCatagory_Status_insurer("Life","Issued","LIC LI");
+    }
 
+    @Test()
+    public void JunkPolicy() throws Exception {
+        ninjaloginpage.ninja_MIS();
         String misid = junkpolicyl.policyCkicked.getText();
         junkpolicyl.JunkPolicy(misid);
-
     }
 
     @AfterMethod()
