@@ -1,7 +1,7 @@
 package Mis_Test;
 
 import com.qa.turtlemint.base.TestBase;
-import com.qa.turtlemint.pages.junk_policy.junk;
+import com.qa.turtlemint.pages.common.junk;
 import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.AfterMethod;
@@ -31,7 +31,9 @@ public class Mis_Login extends TestBase {
     @Test()
     public void PaymentModeFilterTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        junkpolicyl.JunkPolicy("policy entered");
+
+        String misid = junkpolicyl.policyCkicked.getText();
+        junkpolicyl.JunkPolicy(misid);
 
     }
 

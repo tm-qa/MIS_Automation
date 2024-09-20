@@ -1,4 +1,4 @@
-package com.qa.turtlemint.pages.junk_policy;
+package com.qa.turtlemint.pages.common;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
@@ -40,7 +40,7 @@ public class junk extends TestBase {
     WebElement search;
 
     @FindBy(xpath = "//tbody[@class=\"ant-table-tbody\"]")
-    WebElement policyCkicked;
+    public WebElement policyCkicked;
 
 
 
