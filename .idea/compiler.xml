@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MIS_Automation" target="9" />
+      <module name="Motor-TM-Flow" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

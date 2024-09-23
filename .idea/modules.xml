@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MIS_Automation.iml" filepath="$PROJECT_DIR$/.idea/MIS_Automation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Motor-TM-Flow.iml" filepath="$PROJECT_DIR$/Motor-TM-Flow.iml" />
     </modules>
   </component>
 </project>
