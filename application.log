@@ -1,0 +1,173 @@
+2024-09-19 21:53:27,936  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:54:58,117  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:55:17,586  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:55:40,127  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:55:47,594  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 21:56:01,094  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:56:01,206  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:56:06,101  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 21:56:06,155  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 21:56:34,981  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:56:37,025  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 21:56:50,415  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:56:50,520  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:56:55,940  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 21:56:55,994  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 21:57:17,366  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-19 21:57:29,764  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-19 21:57:29,950  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> search policy entered
+2024-09-19 21:57:30,040  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> entered
+2024-09-19 21:59:19,505  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 21:59:21,797  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 21:59:36,401  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:59:36,518  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 21:59:59,906  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 22:00:02,208  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 22:00:23,194  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:00:23,308  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:00:27,706  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:00:27,757  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:00:46,771  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-19 22:01:00,683  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-19 22:01:00,908  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> search policy entered
+2024-09-19 22:01:00,993  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> entered
+2024-09-19 22:01:02,130  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> clicked on policy
+2024-09-19 22:01:04,866  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> click on close button
+2024-09-19 22:01:05,249  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Edit button clicked
+2024-09-19 22:03:20,264  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 22:03:22,282  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 22:03:39,730  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:03:39,837  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:03:44,215  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:03:44,268  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:03:59,283  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-19 22:04:12,754  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-19 22:04:12,965  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> search policy entered
+2024-09-19 22:04:13,051  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> entered
+2024-09-19 22:04:13,552  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> clicked on policy
+2024-09-19 22:04:15,612  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> click on close button
+2024-09-19 22:04:15,996  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Edit button clicked
+2024-09-19 22:04:17,079  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> policy Status clicked
+2024-09-19 22:06:14,974  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-19 22:06:17,138  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-19 22:06:36,203  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:06:36,309  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-19 22:06:41,782  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:06:41,837  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-19 22:06:58,142  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-19 22:07:09,960  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-19 22:07:10,179  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> search policy entered
+2024-09-19 22:07:10,273  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> entered
+2024-09-19 22:07:11,280  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> clicked on policy
+2024-09-19 22:07:13,844  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> click on close button
+2024-09-19 22:07:14,237  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Edit button clicked
+2024-09-19 22:07:16,321  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> policy Status clicked
+2024-09-19 22:07:17,660  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> junk selected
+2024-09-19 22:07:18,974  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> comment entered
+2024-09-19 22:07:20,060  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Save sale clicked
+2024-09-20 13:17:17,329  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:17:22,407  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:17:35,888  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:17:36,009  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:17:40,354  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:17:40,410  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:17:54,398  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:18:05,525  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:18:05,703  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:19:52,929  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:19:55,005  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:20:08,350  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:20:08,450  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:20:13,347  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:20:13,405  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:20:27,421  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:20:38,850  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:20:38,959  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:20:39,630  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:20:40,218  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> TW policy catagory selected
+2024-09-20 13:22:31,787  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:22:33,877  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:22:47,494  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:22:47,601  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:22:51,933  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:22:51,989  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:23:05,964  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:23:17,044  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:23:17,205  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:23:17,876  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:23:18,490  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> TW policy catagory selected
+2024-09-20 13:23:18,548  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy status clicked
+2024-09-20 13:23:19,121  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy Status selected
+2024-09-20 13:23:19,175  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  insurer select clicked
+2024-09-20 13:23:19,774  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy insurer selected
+2024-09-20 13:23:19,843  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  create Sale clicked
+2024-09-20 13:26:44,175  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:26:46,272  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:26:58,853  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:26:58,958  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:27:03,305  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:27:03,361  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:27:17,347  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:27:28,616  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:27:28,792  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:27:29,444  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:27:30,046  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Life policy catagory selected
+2024-09-20 13:27:30,091  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy status clicked
+2024-09-20 13:27:30,682  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy Status selected
+2024-09-20 13:27:30,735  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  insurer select clicked
+2024-09-20 13:31:32,719  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:31:34,851  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:31:48,294  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:31:48,397  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:31:53,279  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:31:53,337  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:33:48,045  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:33:50,253  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:34:02,907  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:34:03,011  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:34:07,341  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:34:07,398  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:35:28,044  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:35:30,051  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:35:43,780  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:35:43,882  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:35:48,244  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:35:48,298  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:36:02,242  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:36:13,645  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:36:13,802  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:36:13,937  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:36:14,545  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Life policy catagory selected
+2024-09-20 13:36:14,596  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy status clicked
+2024-09-20 13:36:15,156  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy Status selected
+2024-09-20 13:36:15,210  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  insurer select clicked
+2024-09-20 13:37:45,415  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:37:47,388  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:38:01,207  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:38:01,310  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:38:05,672  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:38:05,727  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:38:19,737  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:38:30,845  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:38:31,018  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:38:31,685  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:38:32,288  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Life policy catagory selected
+2024-09-20 13:38:32,336  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy status clicked
+2024-09-20 13:38:32,919  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy Status selected
+2024-09-20 13:38:32,970  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  insurer select clicked
+2024-09-20 13:39:11,322  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2024-09-20 13:39:13,449  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2024-09-20 13:39:26,227  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:39:26,347  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> email Id entered
+2024-09-20 13:39:31,225  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:39:31,279  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Password entered
+2024-09-20 13:39:45,560  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Sign in button clicked
+2024-09-20 13:39:56,664  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> MIS Selected
+2024-09-20 13:39:56,825  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Plus button clicked
+2024-09-20 13:39:57,489  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy catagory clicked
+2024-09-20 13:39:58,078  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Life policy catagory selected
+2024-09-20 13:39:58,133  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  policy status clicked
+2024-09-20 13:39:58,708  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy Status selected
+2024-09-20 13:39:58,781  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  insurer select clicked
+2024-09-20 13:39:59,366  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Issued policy insurer selected
+2024-09-20 13:39:59,430  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==>  create Sale clicked
