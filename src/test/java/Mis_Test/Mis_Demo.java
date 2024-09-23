@@ -40,7 +40,9 @@ public class Mis_Demo extends TestBase {
     @Test()
     public void JunkPolicy() throws Exception {
         ninjaloginpage.ninja_MIS();
+        create.productCatagory_Status_insurer("Life","Issued","LIC LI");
         String misid = junkpolicyl.policyCkicked.getText();
+
         junkpolicyl.JunkPolicy(misid);
     }
 
