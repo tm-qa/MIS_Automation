@@ -48,7 +48,6 @@ public class LoginPage extends TestBase {
     }
 
     public void ninja_MIS() throws Exception {
-        NinjaLogin();
         TestUtil.click(MIS, "MIS Selected");
     }
 
