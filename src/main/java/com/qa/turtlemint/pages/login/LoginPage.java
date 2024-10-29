@@ -38,8 +38,8 @@ public class LoginPage extends TestBase {
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
         TestUtil.getScreenShot();
-       // driver.get(System.getProperty("ninjaurl"));
-         driver.get(prop.getProperty("ninjaurl"));
+        driver.get(System.getProperty("ninjaurl"));
+       //  driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(2000);
         TestUtil.click(SignInbtn, "Sign in button clicked");

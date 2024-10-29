@@ -22,7 +22,7 @@ public class Mis_newSale extends TestBase {
     @FindBy(xpath = "//input[@id=\"createMISEntry_policyStatus\"]//parent::span")
     WebElement policyStatus;
 
-    @FindBy(xpath = "//input[@id=\"createMISEntry_insurer\"]//parent::span")
+    @FindBy(xpath = "//input[@id=\"createMISEntry_insurer\"]")
     WebElement insurerp;
 
     @FindBy(xpath = "//button[text()=\"Create Sale\"]")
@@ -43,7 +43,8 @@ public class Mis_newSale extends TestBase {
         WebElement PS = driver.findElement(By.xpath("//div[@title='" + status + "']"));
         TestUtil.click(PS, status + " policy Status selected");
 
-        TestUtil.click(insurerp, " insurer select clicked");
+        TestUtil.click(insurerp,"");
+        TestUtil.sendKeys(insurerp, insurer," insurer select clicked");
         WebElement Insurer = driver.findElement(By.xpath("//div[@title='" + insurer + "']"));
         TestUtil.click(Insurer, status + " policy insurer selected");
 
@@ -54,8 +55,7 @@ public class Mis_newSale extends TestBase {
         productCatagory_Status_insurer(TW_Motor_Health_Life,status,insurer);
 
         TestUtil.click(vehicleType, " insurer select clicked");
-        WebElement VT = driver.findElement(By.xpath("//div[@title='" + vehicalType + "']"));
-        TestUtil.click(VT, vehicalType + " VT selected");
+        WebElement VT = driver.findElement(By.xpath("//div[@id=\"createMISEntry_vehicleType_list\"]/..//div[@title='" + vehicalType + "']"));        TestUtil.click(VT, vehicalType + " VT selected");
 
         TestUtil.click(createSale, " create Sale clicked");
     }

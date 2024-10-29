@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Ninja_Full", "mis_login"})
+@Test(groups = {"Mis_Full", "mis_login"})
 public class Mis_Demo extends TestBase {
 
     public LoginPage ninjaloginpage;
@@ -34,7 +34,7 @@ public class Mis_Demo extends TestBase {
     @Test()
     public void CreatePolicy() throws Exception {
         ninjaloginpage.ninja_MIS();
-        create.productCatagory_Status_insurer("Life","Issued","LIC LI");
+        create.Motor_productCatagory_Status_insurer("Motor","Issued","NAVI General Insurance","TW");
     }
 
     @Test()
