@@ -41,8 +41,8 @@ public class TestBase {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
 
-            options.setBrowserVersion("121");
-            driver = new ChromeDriver(options);
+//            options.setBrowserVersion("124");
+//            driver = new ChromeDriver(options);
 
             String osName = System.getProperty("os.name");
             LogUtils.info("osName: " + osName);
@@ -62,7 +62,7 @@ public class TestBase {
 //				WebDriver driver = new ChromeDriver(options);
 
             }
-       //              driver = new ChromeDriver(options);
+                     driver = new ChromeDriver(options);
 
             Dimension newDimension = new Dimension(1200, 800);
             driver.manage().window().setSize(newDimension);
@@ -76,8 +76,8 @@ public class TestBase {
             driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
 
-         //   driver.get(System.getProperty("url"));
-           driver.get(prop.getProperty("ninjaurl"));
+            driver.get(System.getProperty("url"));
+        //   driver.get(prop.getProperty("ninjaurl"));
         }
     }
 }
