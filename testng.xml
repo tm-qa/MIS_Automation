@@ -13,18 +13,13 @@
                 </script>
             </method-selector>
         </method-selectors>
-
                 <groups>
                     <run>
                         <include name="${groupName}"></include>
                     </run>
                 </groups>
         <classes>
-            <class name="Ninja_BI.BI_Flow"/>
-            <class name="Ninja_BI.BI_Dashboard_test"/>
-            <class name="Mintpro_CI.CI_Life_Test"/>
-            <class name="NinjaCIDashboardTest.NinjaCIDashboardTestCase"/>
-            <class name="QuotesRequestTest.FWandCVQuotesRequestTest"/>
+            <class name="Mis_Test.Dashboard.Mis_Dashboard"/>
         </classes>
 
     </test>

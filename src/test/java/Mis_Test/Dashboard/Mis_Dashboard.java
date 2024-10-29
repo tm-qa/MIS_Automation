@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+@Test(groups = {"Mis_Full"})
 public class Mis_Dashboard extends TestBase {
     public LoginPage ninjaloginpage;
     public junk junkpolicyl;
