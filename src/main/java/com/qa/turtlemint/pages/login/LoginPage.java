@@ -50,6 +50,9 @@ public class LoginPage extends TestBase {
     public void ninja_MIS() throws Exception {
         NinjaLogin();
         TestUtil.click(MIS, "MIS Selected");
+        WebCommands.staticSleep(10000);
+        driver.navigate().refresh();
+        driver.get("https://ninja.turtlemint.com/ninja-v2/mis/allrecords");
     }
 
 }
