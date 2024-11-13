@@ -38,15 +38,11 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
         LogUtils.info("Browser name: " + browserName);
         if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.setBrowserVersion("114");
             options.addArguments("--remote-allow-origins=*");
-            options.addExtensions();
 
 //            options.setBrowserVersion("124");
 //            driver = new ChromeDriver(options);
-
 
 
             String osName = System.getProperty("os.name");
@@ -67,9 +63,7 @@ public class TestBase {
 //				WebDriver driver = new ChromeDriver(options);
 
             }
-            WebDriverManager.chromedriver().setup();
                      driver = new ChromeDriver(options);
-                     options.setBrowserVersion("114");
 
             Dimension newDimension = new Dimension(1200, 800);
             driver.manage().window().setSize(newDimension);
