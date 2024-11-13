@@ -65,6 +65,7 @@ public class TestBase {
 //				WebDriver driver = new ChromeDriver(options);
 
             }
+            WebDriverManager.chromedriver().setup();
                      driver = new ChromeDriver(options);
 
             Dimension newDimension = new Dimension(1200, 800);
