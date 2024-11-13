@@ -40,6 +40,7 @@ public class TestBase {
         if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
+            options.setBrowserVersion("114");
             options.addArguments("--remote-allow-origins=*");
             options.addExtensions();
 
@@ -68,6 +69,7 @@ public class TestBase {
             }
             WebDriverManager.chromedriver().setup();
                      driver = new ChromeDriver(options);
+                     options.setBrowserVersion("114");
 
             Dimension newDimension = new Dimension(1200, 800);
             driver.manage().window().setSize(newDimension);
