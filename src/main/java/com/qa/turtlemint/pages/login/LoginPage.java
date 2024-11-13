@@ -14,7 +14,7 @@ public class LoginPage extends TestBase {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//a[@id='google-signin-button']")
+    @FindBy(xpath = "//a[@id='google-signin-button']//img")
     WebElement SignInbtn;
 
     @FindBy(xpath = "//input[@type=\"email\"]")
@@ -41,7 +41,7 @@ public class LoginPage extends TestBase {
         driver.get(System.getProperty("ninjaurl"));
        //  driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(8000);
         TestUtil.click(SignInbtn, "Sign in button clicked");
         WebCommands.staticSleep(10000);
         TestUtil.getScreenShot();
