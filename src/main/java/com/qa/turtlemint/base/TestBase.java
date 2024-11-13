@@ -38,13 +38,14 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
         LogUtils.info("Browser name: " + browserName);
         if (browserName.equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
             options.addExtensions();
 
 //            options.setBrowserVersion("124");
 //            driver = new ChromeDriver(options);
-            WebDriverManager.chromedriver().setup();
+
 
 
             String osName = System.getProperty("os.name");
