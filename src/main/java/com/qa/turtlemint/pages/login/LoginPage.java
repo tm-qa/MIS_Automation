@@ -34,6 +34,7 @@ public class LoginPage extends TestBase {
     public void NinjaLogin() {
         driver.get("https://accounts.google.com/");
         WebCommands.staticSleep(3000);
+        driver.get(System.getProperty("ninjaurl"));
 
         TestUtil.sendKeys(emailgoogle, "automationtesting@turtlemint.com", "email Id entered");
         TestUtil.sendKeys(emailgoogle, String.valueOf(Keys.RETURN), "email Id entered");
