@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 public class LoginPage extends TestBase {
 
     public LoginPage() {
@@ -45,10 +48,14 @@ public class LoginPage extends TestBase {
         TestUtil.click(SignInbtn, "Sign in button clicked");
         WebCommands.staticSleep(10000);
         TestUtil.getScreenShot();
+        System.out.println();
     }
 
     public void ninja_MIS() throws Exception {
         NinjaLogin();
+        Set<String> allWindowHandles = driver.getWindowHandles();
+        ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
+        System.out.println("No. of tabs: " + tabs.size());
         TestUtil.click(MIS, "MIS Selected");
         System.out.println("chutiya");
         WebCommands.staticSleep(10000);
