@@ -40,9 +40,12 @@ public class TestBase {
         if (browserName.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
+            options.addExtensions();
 
 //            options.setBrowserVersion("124");
 //            driver = new ChromeDriver(options);
+            WebDriverManager.chromedriver().setup();
+
 
             String osName = System.getProperty("os.name");
             LogUtils.info("osName: " + osName);
