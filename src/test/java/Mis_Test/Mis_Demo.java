@@ -46,6 +46,6 @@ public class Mis_Demo extends TestBase {
 
     @AfterMethod()
     public void Close() {
-      //  driver.quit();
+        driver.quit();
     }
 }
