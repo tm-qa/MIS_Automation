@@ -21,6 +21,7 @@
                 </groups>
         <classes>
             <class name="Mis_Test.Mis_Demo"/>
+            <class name="DashBoard.TC_61_to_116_test"></class>
 
         </classes>
 

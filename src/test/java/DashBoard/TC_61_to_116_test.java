@@ -1,4 +1,4 @@
-package dashboardTest;
+package DashBoard;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.pages.Dashboard.TC_61_to_116;
@@ -11,7 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Ninja_Full", "mis_login"})
+@Test(groups = {"Mis_Full", "dash_61_116"})
 public class TC_61_to_116_test extends TestBase {
 
     public LoginPage ninjaloginpage;
