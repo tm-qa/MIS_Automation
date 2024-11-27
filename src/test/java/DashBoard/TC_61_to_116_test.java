@@ -11,7 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "dash_61_116"})
+@Test(groups = {"Mis_Full", "dash_61_116","Dashboard"})
 public class TC_61_to_116_test extends TestBase {
 
     public LoginPage ninjaloginpage;
