@@ -22,7 +22,7 @@
         <classes>
             <class name="Mis_Test.Mis_Demo"/>
             <class name="DashBoard.TC_61_to_116_test"></class>
-
+            <class name="Manual_Autoparse.TC_09_TO_21_Test"></class>
         </classes>
 
     </test>
