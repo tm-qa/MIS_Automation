@@ -40,8 +40,8 @@ public class Mis_Demo extends TestBase {
     @Test()
     public void JunkPolicy() throws Exception {
         ninjaloginpage.ninja_MIS();
-        String misid = junkpolicyl.policyCkicked.getText();
-        junkpolicyl.JunkPolicy(misid);
+        String misID = junkpolicyl.policyCkicked.getText();
+        junkpolicyl.JunkPolicy(misID);
     }
 
     @AfterMethod()
