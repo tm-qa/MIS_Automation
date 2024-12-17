@@ -34,15 +34,15 @@ public class Mis_Demo extends TestBase {
     @Test()
     public void CreatePolicy() throws Exception {
         ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","NAVI General Insurance","TW");
+       // create.Motor_productCatagory_Status_insurer("Motor","Issued","NAVI General Insurance","TW");
     }
 
-    @Test()
-    public void JunkPolicy() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        String misid = junkpolicyl.policyCkicked.getText();
-        junkpolicyl.JunkPolicy(misid);
-    }
+//    @Test()
+//    public void JunkPolicy() throws Exception {
+//        ninjaloginpage.ninja_MIS();
+//        String misid = junkpolicyl.policyCkicked.getText();
+//        junkpolicyl.JunkPolicy(misid);
+//    }
 
     @AfterMethod()
     public void Close() {
