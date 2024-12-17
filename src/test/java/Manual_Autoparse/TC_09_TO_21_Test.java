@@ -14,34 +14,33 @@ public class TC_09_TO_21_Test extends TestBase {
     public TC_09_TO_21_Page TC_09_TO_21_Page;
 
 
-    public TC_09_TO_21_Test() {super();}
-    @BeforeClass()
+    public TC_09_TO_21_Test() {
+        super();
+    }
+
+    @BeforeMethod()
     public void start() throws Exception {
         initialization();
         ninjaloginpage = new LoginPage();
         TC_09_TO_21_Page = new TC_09_TO_21_Page();
-        //ninjaloginpage.ninja_MIS();
-        ninjaloginpage.NinjaLogin();
+    }
 
-    }
-    @BeforeMethod()
-    public void MIS() throws Exception {
-        ninjaloginpage.ninja_MIS();
-    }
     @Test()
-    public void TC_09() {
-        TC_09_TO_21_Page.commonflow("Motor","Issued","L&T","Car");
+    public void TC_09() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        TC_09_TO_21_Page.commonflow("Motor", "Issued", "L&T", "Car");
         TC_09_TO_21_Page.TC_09();
     }
+
     @Test()
-    public void TC_21() {
-        TC_09_TO_21_Page.commonflowLife("Life","Issued","Bajaj Allianz LI");
+    public void TC_21() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        TC_09_TO_21_Page.commonflowLife("Life", "Issued", "Bajaj Allianz LI");
         TC_09_TO_21_Page.TC_21();
     }
 
 
-
-    @AfterClass()
+    @AfterMethod()
     public void Close() {
         driver.quit();
     }

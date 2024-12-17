@@ -34,37 +34,37 @@ public class Mis_Dashboard extends TestBase {
         TestUtil.getFullPageScreenShot();
     }
 
-//    @Test(description = " verify all Dashboard tabs Login")
-//    public void verifyDashboardTabs() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.verifyDashboardTabs();
-//
-//    }
-//    @Test(description = " verify all Dashboard columns Login")
-//    public void verifyDashboardColumns() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.verifyDashboardColumns();
-//    }
-//    @Test(description = "verify hamburger")
-//    public void verifyHamburger() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.hamburger();
-//    }
-//    @Test (description = "verify hamburger modules")
-//    public void verifyHamburgerAndModules() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.hamburgerModules();
-//    }
-//    @Test(description = "verify date range with all filer by combinations")
-//    public void verifyDateRangeAndFilyerByCombinations() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.VerifydateRangeAndFilterByCombination();
-//    }
-//    @Test(description = "verify date range")
-//    public void verifyDateRange() throws Exception {
-//        ninjaloginpage.ninja_MIS();
-//        dashborad_page.verifyDateRange();
-//    }
+    @Test(description = " verify all Dashboard tabs Login")
+    public void verifyDashboardTabs() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.verifyDashboardTabs();
+
+    }
+    @Test(description = " verify all Dashboard columns Login")
+    public void verifyDashboardColumns() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.verifyDashboardColumns();
+    }
+    @Test(description = "verify hamburger")
+    public void verifyHamburger() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.hamburger();
+    }
+    @Test (description = "verify hamburger modules")
+    public void verifyHamburgerAndModules() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.hamburgerModules();
+    }
+    @Test(description = "verify date range with all filer by combinations")
+    public void verifyDateRangeAndFilyerByCombinations() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.VerifydateRangeAndFilterByCombination();
+    }
+    @Test(description = "verify date range")
+    public void verifyDateRange() throws Exception {
+        ninjaloginpage.ninja_MIS();
+        dashborad_page.verifyDateRange();
+    }
 
     @AfterMethod()
     public void Close() {
