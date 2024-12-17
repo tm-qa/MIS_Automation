@@ -26,9 +26,11 @@ public class LoginPage extends TestBase {
     @FindBy(xpath = "(//a[@data-auto=\"mis-module\"])[2]")
     WebElement MIS;
 
+    @FindBy(xpath = "//input[@aria-label=\"Employee ID\"]")
+    WebElement Employe;
 
 
-    public void NinjaLogin() {
+    public void NinjaLogin() throws InterruptedException {
         driver.get("https://accounts.google.com/");
         WebCommands.staticSleep(3000);
 
@@ -37,13 +39,24 @@ public class LoginPage extends TestBase {
         TestUtil.sendKeys(passworgoogle, "Turtle@2023", "Password entered");
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
+
+
+        Thread.sleep(3000);
+        TestUtil.getScreenShot();
+        TestUtil.sendKeys(Employe, "FBS4825", "Employee ID entered");
+        Thread.sleep(3000);
+        TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
+
+        Thread.sleep(3000);
+
+
         TestUtil.getScreenShot();
         driver.get(System.getProperty("ninjaurl"));
-       //  driver.get(prop.getProperty("ninjaurl"));
+        //  driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(2000);
         TestUtil.click(SignInbtn, "Sign in button clicked");
-        WebCommands.staticSleep(10000);
+        WebCommands.staticSleep(2000);
         TestUtil.getScreenShot();
     }
 
