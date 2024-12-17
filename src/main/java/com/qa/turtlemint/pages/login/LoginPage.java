@@ -47,7 +47,7 @@ public class LoginPage extends TestBase {
         Thread.sleep(3000);
         TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
 
-        Thread.sleep(3000);
+        Thread.sleep(20000);
 
 
         TestUtil.getScreenShot();
