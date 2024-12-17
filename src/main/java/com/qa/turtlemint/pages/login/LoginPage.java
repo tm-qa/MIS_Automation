@@ -40,14 +40,14 @@ public class LoginPage extends TestBase {
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
 
-
-        Thread.sleep(3000);
-        TestUtil.getScreenShot();
-        TestUtil.sendKeys(Employe, "FBS4825", "Employee ID entered");
-        Thread.sleep(3000);
-        TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
-
-        Thread.sleep(20000);
+//
+//        Thread.sleep(3000);
+//        TestUtil.getScreenShot();
+//        TestUtil.sendKeys(Employe, "FBS4825", "Employee ID entered");
+//        Thread.sleep(3000);
+//        TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
+//
+//        Thread.sleep(20000);
 
 
         TestUtil.getScreenShot();
