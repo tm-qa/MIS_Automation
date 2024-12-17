@@ -4,6 +4,7 @@ import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.pages.DashBoard.Dashboard_Pagee;
 import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.util.iTestListener;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -171,5 +172,9 @@ public class Dashboard_TCs_113To179 extends TestBase {
     }
 
 
+    @AfterMethod()
+    public void Close() {
+        driver.quit();
+    }
 
 }
