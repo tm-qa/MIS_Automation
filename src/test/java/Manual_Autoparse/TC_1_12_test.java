@@ -10,6 +10,7 @@ import com.qa.turtlemint.util.TestUtil;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Test(groups = {"Mis_Full","TC_1_12_test"})
 public class TC_1_12_test extends TestBase {
 
     public LoginPage ninjaloginpage;

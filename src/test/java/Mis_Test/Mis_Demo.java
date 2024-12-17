@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "mis_login"})
+@Test(groups = {"", "mis_login"})
 public class Mis_Demo extends TestBase {
 
     public LoginPage ninjaloginpage;

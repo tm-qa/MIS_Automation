@@ -9,7 +9,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Ninja_Full", "dash_113To179"})
+@Test(groups = {"Mis_Full","Dashboard", "dash_113To179"})
 public class Dashboard_TCs_113To179 extends TestBase {
 
     public LoginPage ninjaloginpage;
