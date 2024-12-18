@@ -245,7 +245,7 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(productNamedrop, " Product name dropdown clicked");
         WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
         TestUtil.click(PN, productName + " Procduct name selected");
-        TestUtil.sendKeys(regisNumber, "MH-03-ZZ-1234", "Registration number entered");
+        TestUtil.sendKeys(regisNumber, "GA-05-M-2611", "Registration number entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }

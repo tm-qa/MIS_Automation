@@ -5,8 +5,6 @@ import com.qa.turtlemint.pages.ManualAndAutoParseFlowPage.TC_1_12;
 import com.qa.turtlemint.pages.common.Mis_newSale;
 import com.qa.turtlemint.pages.common.junk;
 import com.qa.turtlemint.pages.login.LoginPage;
-import com.qa.turtlemint.util.LogUtils;
-import com.qa.turtlemint.util.TestUtil;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -32,10 +30,10 @@ public class TC_1_12_test extends TestBase {
     @Test()
     public void TC1() throws Exception {
         ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
-        String misID = junkpolicyl.policyCkicked.getAttribute("value");
-        System.out.println(misID);
-        TC.basicDetails("Website","New","09-10-2024");
+        create.productCatagory_Status_insurer1("Motor","Issued");
+       // String misID = junkpolicyl.policyCkicked.getAttribute("value");
+      //  System.out.println(misID);
+        TC.basicDetails("Website", "New", "09-10-2024");
         TC.saleDetails("09-10-2024");
         TC.policyDetail();
 
@@ -45,11 +43,19 @@ public class TC_1_12_test extends TestBase {
     public void TC3() throws Exception {
         ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","HDFC Ergo","TW");
-        String misID = junkpolicyl.policyCkicked.getAttribute("value");
-        System.out.println(misID);
-        TC.basicDetails("Website","New","09-10-2024");
-        TC.saleDetails("09-10-2024");
-        TC.policyDetail();
+//        String misID = junkpolicyl.policyCkicked.getAttribute("value");
+//        System.out.println(misID);
+
+        TC.generalDetails("New","09-10-2024");
+        TC.proposerDetails("Mr");
+        TC.vehicleDetails("Comprehensive");
+        TC.dateEndorsementDtails("01-01-2024","01-02-2024");
+        TC.qcDtails("Ready");
+        TC.saleDetailsmanual("09-10-2024");
+        TC.policyDetailmanual();
+//        TC.basicDetails("Website","New","09-10-2024");
+//        TC.saleDetails("09-10-2024");
+//        TC.policyDetail();
 
     }
     @Test()
@@ -162,17 +168,5 @@ public class TC_1_12_test extends TestBase {
         TC.saleDetailsmanual("11-10-2024");
         TC.policyDetailmanual();
     }
-
-    
-
-
-
-
-
-
-
-
-
-
 
 }
