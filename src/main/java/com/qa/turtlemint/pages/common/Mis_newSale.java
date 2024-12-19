@@ -4,6 +4,7 @@ import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
 import com.qa.turtlemint.util.TestUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +26,8 @@ public class Mis_newSale extends TestBase {
 
     @FindBy(xpath = "//input[@id=\"createMISEntry_insurer\"]//parent::span")
     WebElement insurerp;
+    @FindBy(xpath = "//input[@id=\"createMISEntry_insurer\"]")
+    WebElement insurerp1;
 
     @FindBy(xpath = "//button[text()=\"Create Sale\"]")
     WebElement createSale;
@@ -51,9 +54,31 @@ public class Mis_newSale extends TestBase {
 
         TestUtil.click(createSale, " create Sale clicked");
     }
+    public void productCatagory_Status_insurer1(String TW_Motor_Health_Life, String status) {
+        WebCommands.staticSleep(1000);
+        TestUtil.click(plus,"Plus button clicked");
+        TestUtil.click(policyCatagory, " policy catagory clicked");
+        WebElement PC = driver.findElement(By.xpath("//div[@title='" + TW_Motor_Health_Life + "']"));
+        TestUtil.click(PC, TW_Motor_Health_Life + " policy catagory selected");
 
-    public void Motor_productCatagory_Status_insurer(String TW_Motor_Health_Life, String status,String insurer,String vehicalType) {
-        productCatagory_Status_insurer(TW_Motor_Health_Life,status,insurer);
+        TestUtil.click(policyStatus, " policy status clicked");
+        WebElement PS = driver.findElement(By.xpath("//div[@title='" + status + "']"));
+        TestUtil.click(PS, status + " policy Status selected");
+
+        TestUtil.click(insurerp1, " insurer select clicked");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(insurerp1,"NAVI General Insurance","Insurer selected");
+        WebCommands.staticSleep(2000);
+        insurerp1.sendKeys(Keys.ENTER);
+
+//        WebElement Insurer = driver.findElement(By.xpath("//div[@title='" + insurer + "']"));
+//        TestUtil.click(Insurer, insurer + " policy insurer selected");
+
+        TestUtil.click(createSale, " create Sale clicked");
+    }
+
+    public void Motor_productCatagory_Status_insurer(String TW_Motor_Health_Life, String status,String vehicalType) {
+        productCatagory_Status_insurer1(TW_Motor_Health_Life,status);
         TestUtil.click(vehicleType, " insurer select clicked");
         WebElement VT = driver.findElement(By.xpath("//div[@title='" + vehicalType + "']"));
         TestUtil.click(VT, vehicalType + " VT selected");
