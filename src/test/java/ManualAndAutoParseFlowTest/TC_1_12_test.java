@@ -30,143 +30,42 @@ public class TC_1_12_test extends TestBase {
     @Test()
     public void TC1() throws Exception {
         ninjaloginpage.ninja_MIS();
-        create.productCatagory_Status_insurer1("Motor","Issued");
-       // String misID = junkpolicyl.policyCkicked.getAttribute("value");
-      //  System.out.println(misID);
-        TC.basicDetails("Website", "New", "09-10-2024");
-        TC.saleDetails("09-10-2024");
+        create.Motor_productCatagory_Status_insurer("Motor","Issued","Car");
+        String misID = junkpolicyl.policyCkicked.getAttribute("value");
+        System.out.println(misID);
+        TC.generalDetails("New","19-12-2024","99211001022");
+        TC.proposerDetails("Mr");
+        TC.vehicleDetails("Comprehensive","GA-05-M-2311");
+        TC.vehicleDetails1();
+        TC.makeModel();
+        TC.variant();
+        TC.premiumDetails();
+        TC.riskStartDtails("01-01-2025");
+        TC.riskEndDtails("01-02-2025");
+        TC.qcDtails("Ready");
+        TC.saleDetailsmanual("Website","13-12-2024","Turtlemint");
+        TC.policyDetail();
+
+        create.Motor_productCatagory_Status_insurer("Motor","Issued","Car");
+        String misID1 = junkpolicyl.policyCkicked.getAttribute("value");
+        System.out.println(misID1);
+        TC.generalDetails("New","19-12-2024","9280100022");
+        TC.proposerDetails("Mr");
+        TC.vehicleDetails("Comprehensive","GA-05-M-2311");
+        TC.vehicleDetails1();
+        TC.duplicatePolicyPop();
+        TC.makeModel();
+        TC.variant();
+        TC.premiumDetails();
+        TC.riskStartDtails("15-01-2024");
+        TC.duplicatePolicyPop();
+        TC.riskEndDtails("03-02-2024");
+        TC.duplicatePolicyPop();
+        TC.qcDtails("Ready");
+        TC.saleDetailsmanual("Website","01-01-2025","Turtlemint");
         TC.policyDetail();
 
     }
 
-    @Test()
-    public void TC3() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("TW","Issued","HDFC Ergo","TW");
-//        String misID = junkpolicyl.policyCkicked.getAttribute("value");
-//        System.out.println(misID);
-
-        TC.generalDetails("New","09-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("Comprehensive");
-        TC.dateEndorsementDtails("01-01-2024","01-02-2024");
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("09-10-2024");
-        TC.policyDetailmanual();
-//        TC.basicDetails("Website","New","09-10-2024");
-//        TC.saleDetails("09-10-2024");
-//        TC.policyDetail();
-
-    }
-    @Test()
-    public void TC5() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","Car");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","09-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("Comprehensive");
-        TC.dateEndorsementDtails("23-10-2024","23-10-2025");
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("09-10-2024");
-        TC.policyDetailmanual();
-
-    }
-    @Test()
-    public void TC6() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","Car");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("Rollover","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-    }
-    @Test()
-    public void TC7() throws Exception {
-
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","PCV");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-    }
-    public void TC8() throws Exception {
-
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","GCV");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-    }
-
-    @Test()
-    public void TC9() throws Exception {
-
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetails();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-    }
-    @Test()
-    public void TC10() throws Exception {
-
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID = junkpolicyl.policyCkicked.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetails();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-    }
 
 }

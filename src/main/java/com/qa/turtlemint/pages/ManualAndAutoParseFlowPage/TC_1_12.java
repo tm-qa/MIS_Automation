@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.util.Locale;
 
@@ -16,6 +17,11 @@ public class TC_1_12 extends TestBase {
 
     @FindBy(xpath = "//input[@id=\"AutoParsing_channelType\"]//parent::span")
     WebElement channeltype;
+    @FindBy(xpath = "//input[@id=\"Motor_channelType\"]//parent::span")
+    WebElement channeltype1;
+    @FindBy(xpath = "//input[@id=\"Motor_tenant\"]//parent::span")
+    WebElement Tenant;
+
     @FindBy(xpath = "//input[@id=\"AutoParsing_businessType\"]//parent::span")
     WebElement bussinesstype;
     @FindBy(xpath = "//input[@id=\"Motor_businessType\"]")
@@ -32,9 +38,6 @@ public class TC_1_12 extends TestBase {
     WebElement gvw;
     @FindBy(xpath = "//input[@id=\"NCB\"]")
     WebElement NCB;
-
-
-
 
 
     @FindBy(xpath = "//input[@id=\"Motor_manualQCStatus\"]")
@@ -111,18 +114,18 @@ public class TC_1_12 extends TestBase {
     WebElement totaltppremium;
     @FindBy(xpath = "//input[@id=\"NetPremium\"]")
     WebElement netpremium;
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//input[@id=\"GrossPremium\"]")
+    WebElement grosspremium;
+    @FindBy(xpath = "//input[@id=\"ServiceTax\"]")
+    WebElement servicetax;
+    @FindBy(xpath = "//input[@id=\"BasicTPPremium\"]")
+    WebElement basictppremium;
+    @FindBy(xpath = "//input[@id=\"BasicODPremium\"]")
+    WebElement basicodpremium;
+    @FindBy(xpath = "//input[@id=\"SumInsured\"]")
+    WebElement idv;
+    @FindBy(xpath = "//input[@id=\"NCB\"]")
+    WebElement ncb;
 
     @FindBy(xpath = "//div[text()=\"14\"]")
     WebElement date;
@@ -134,16 +137,25 @@ public class TC_1_12 extends TestBase {
     WebElement FileUpload;
     @FindBy(xpath = "//button[text()=\"OK\"]//parent::div")
     WebElement okbutton;
+    @FindBy(xpath = "//span[@aria-label=\"arrow-left\"]")
+    WebElement backbutton;
+
     @FindBy(xpath = "//input[@value=\"POLICY\"]//parent::span")
     WebElement policytype;
     @FindBy(xpath = "//input[@name=\"_id\"]")
     WebElement misID;
-    @FindBy(xpath = "//button[text()=\"Parse & Save Sale\"]//parent::div")
+    @FindBy(xpath = "//button[text()=\"Save Sale\"]//parent::div")
     WebElement savebutton;
     @FindBy(xpath = "//button[text()=\"Save Sale\"]//parent::div")
     WebElement savebuttonmanual;
     @FindBy(xpath = "//input[@name=\"policyNumber\"]")
     WebElement policynumber;
+    @FindBy(xpath = "//p[text()=\"Warning! Duplicate Policy Detected\"]")
+    WebElement duplipolicywarning;
+    @FindBy(xpath = "//button[@type=\"button\"]")
+    WebElement cancelbutton;
+
+
     public TC_1_12() {
         PageFactory.initElements(driver, this);
     }
@@ -167,10 +179,13 @@ public class TC_1_12 extends TestBase {
 
     }
 
-    public void generalDetails(String bussinessType, String issuanceDate) {
+    public void generalDetails(String bussinessType, String issuanceDate, String policyNumber) {
+        WebCommands.staticSleep(4000);
 
         TestUtil.click(tmbrokercodecheckboxmanual, "Check box selected");
-        TestUtil.sendKeys(policynumber, "988822211", "policy number entered");
+
+        TestUtil.click(policynumber, " Business type dropdown clicked");
+       TestUtil.sendKeys(policynumber, policyNumber,"");
 
         TestUtil.click(bussinesstypemanual, " Business type dropdown clicked");
         WebElement BT = driver.findElement(By.xpath("//div[@title='" + bussinessType + "']"));
@@ -189,7 +204,17 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
 
     }
-    public void saleDetailsmanual(String salecloseDate) {
+
+    public void saleDetailsmanual(String channeltype, String salecloseDate, String tenant) {
+
+        TestUtil.click(channeltype1, " Channel type dropdown clicked");
+        WebElement CT = driver.findElement(By.xpath("//div[@title='" + channeltype + "']"));
+        TestUtil.click(CT, channeltype1 + " Channel type selected");
+
+        TestUtil.click(Tenant, " Channel type dropdown clicked");
+        WebElement TT = driver.findElement(By.xpath("//div[@title='" + tenant + "']"));
+        TestUtil.click(TT, Tenant + " Channel type selected");
+
         WebCommands.staticSleep(2000);
         TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
         saleclosedatemanual.sendKeys(Keys.ENTER);
@@ -202,12 +227,15 @@ public class TC_1_12 extends TestBase {
         FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
+        WebCommands.staticSleep(2000);
         TestUtil.click(okbutton, "Clicked on ok button");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
         TestUtil.click(savebutton, "Clicked on save button");
         WebCommands.staticSleep(2000);
         TestUtil.getScreenShot();
+        TestUtil.click(backbutton,"Clicked on back button");
+        WebCommands.staticSleep(2000);
     }
 
     public void policyDetailmanual() {
@@ -234,92 +262,114 @@ public class TC_1_12 extends TestBase {
         TestUtil.sendKeys(regisAddress, "Test building", "Registration address entered");
         TestUtil.sendKeys(regisPincode, "400605", "Registration pincode entered");
 
-      //  TestUtil.sendKeys(regisCity, "Mumbai", "Registration City entered");
-      //  TestUtil.sendKeys(regisState, "Maharashtra", "Registration state entered");
+        TestUtil.sendKeys(regisCity, "Mumbai", "Registration City entered");
+        //  TestUtil.sendKeys(regisState, "Maharashtra", "Registration state entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }
 
-    public void vehicleDetails(String productName) {
+    public void vehicleDetails(String productName, String resiternumber) {
 
         TestUtil.click(productNamedrop, " Product name dropdown clicked");
         WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
         TestUtil.click(PN, productName + " Procduct name selected");
-        TestUtil.sendKeys(regisNumber, "GA-05-M-2611", "Registration number entered");
-        TestUtil.getScreenShot();
-        WebCommands.staticSleep(2000);
-    }
-    public void vehicleDetails1() {
 
-        TestUtil.sendKeys(cubiccapacity, "2500"," Cubic capacity entered");
-        TestUtil.sendKeys(fuelType,"Diesel","Diesel fuel type selected");
-        TestUtil.sendKeys(manufactureYear,"2012","2012 manufacturing year selected");
+        TestUtil.click(regisNumber, "");
+        TestUtil.sendKeys(regisNumber, resiternumber,"Registration number entered");
+
+        TestUtil.getScreenShot();
+
+        WebCommands.staticSleep(3000);
+    }
+    public void duplicatePolicyPop() {
+        Assert.assertEquals(duplipolicywarning.getText(),"Warning! Duplicate Policy Detected");
+        System.out.println(duplipolicywarning+" Warning detected");
+        TestUtil.click(cancelbutton,"Clicked on cancel button");
+    }
+
+
+
+
+    public void vehicleDetails1() {
+        WebCommands.staticSleep(1000);
+        TestUtil.sendKeys(cubiccapacity, "2500", " Cubic capacity entered");
+        WebCommands.staticSleep(1000);
+        TestUtil.sendKeys(fuelType, "Diesel", "Diesel fuel type selected");
+        WebCommands.staticSleep(2000);
+        TestUtil.click(manufactureYear,"");
+        WebCommands.staticSleep(1000);
+        TestUtil.sendKeys(manufactureYear, "2024", "2024 manufacturing year selected");
+        WebCommands.staticSleep(1000);
         TestUtil.sendKeys(engineNum, "MH-03444-ZZ-1234", "engine number entered");
         TestUtil.sendKeys(chassisNum, "MH-03-ZZ-123448484", "chassis number entered");
-        TestUtil.getScreenShot();
-        WebCommands.staticSleep(2000);
     }
+
     public void vehicleDetailsPCV(String vehiclestype, String carrierType) {
         WebCommands.staticSleep(2000);
         TestUtil.sendKeys(vehiclesubtypedrop, vehiclestype, vehiclestype + " Vehicle type selected");
         vehiclesubtypedrop.sendKeys(Keys.ENTER);
-        TestUtil.sendKeys(carriertypedrop, carrierType,carrierType + "Carrier type selected");
+        TestUtil.sendKeys(carriertypedrop, carrierType, carrierType + "Carrier type selected");
         carriertypedrop.sendKeys(Keys.ENTER);
         TestUtil.sendKeys(seatingCapacity, "12", "Seating capacity entered");
         TestUtil.getScreenShot();
 
     }
+
     public void premiumDetails() {
 
-        TestUtil.sendKeys(totalodpremium, "2500"," Total OD premium entered");
-        TestUtil.sendKeys(totaltppremium,"2500","Total tp premium entered");
-        TestUtil.sendKeys(netpremium,"2012","Net premium entered");
+        TestUtil.sendKeys(ncb, "2", "IDV entered");
+        TestUtil.sendKeys(idv, "2", "IDV entered");
+        TestUtil.sendKeys(basicodpremium, "2500", "basic od premium entered");
+        TestUtil.sendKeys(totalodpremium, "2500", " Total OD premium entered");
+        TestUtil.sendKeys(basictppremium, "2500", "basic tp premium entered");
+        TestUtil.sendKeys(totaltppremium, "2500", "Total tp premium entered");
+        TestUtil.sendKeys(netpremium, "5000", "Net premium entered");
+        TestUtil.sendKeys(servicetax, "250", "service tax entered");
+        TestUtil.sendKeys(grosspremium, "5250", "gross premium entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }
 
-    public void makeModel(){
+    public void makeModel() {
+        WebCommands.staticSleep(2000);
         TestUtil.click(makemodel, " MakeModel clicked");
         WebCommands.staticSleep(2000);
-        new Actions(driver)
-                .keyDown(Keys.SHIFT)
-                .sendKeys("f")
-                .keyUp(Keys.SHIFT)
-                .sendKeys("i")
-                .perform();
+        new Actions(driver).keyDown(Keys.SHIFT).sendKeys("f").keyUp(Keys.SHIFT).sendKeys("i").perform();
         WebCommands.staticSleep(2000);
         TestUtil.click(fiat_base500, " fiat_base500 selected");
         WebCommands.staticSleep(2000);
         TestUtil.getScreenShot();
     }
-    public void variant(){
+
+    public void variant() {
+        WebCommands.staticSleep(2000);
         Actions builder = new Actions(driver);
-        builder.moveToElement( variantdrop ).click( variantdrop);
-        WebCommands.staticSleep(2000);
+        builder.moveToElement(variantdrop).click(variantdrop);
         builder.perform();
-        new Actions(driver)
-                .sendKeys("s");
-        TestUtil.click(sports,"variant selected");
+        TestUtil.sendKeys(variantdrop,"S","");
+      //  new Actions(driver).sendKeys("s");
+        TestUtil.click(sports, "variant selected");
         TestUtil.getScreenShot();
     }
 
 
-    public void dateEndorsementDtails(String riskstart, String riskend) {
-        TestUtil.sendKeys(riskstartdate, riskstart, riskstart + " Sale close date Entered");
+    public void riskStartDtails(String riskstart) {
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(riskstartdate, riskstart, riskstart + " Sale start date Entered");
+        WebCommands.staticSleep(2000);
         riskstartdate.sendKeys(Keys.ENTER);
+
+    }
+    public void riskEndDtails( String riskend) {
+        WebCommands.staticSleep(2000);
         TestUtil.sendKeys(riskenddate, riskend, riskend + " Sale close date Entered");
-        riskstartdate.sendKeys(Keys.ENTER);
+        riskenddate.sendKeys(Keys.ENTER);
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }
-    public void dateEndorsementDtailsod(String riskstart, String riskend) {
-        TestUtil.sendKeys(odriskstartdate, riskstart, riskstart + " Sale close date Entered");
-        odriskstartdate.sendKeys(Keys.ENTER);
-        TestUtil.sendKeys(odriskenddate, riskend, riskend + " Sale close date Entered");
-        odriskenddate.sendKeys(Keys.ENTER);
-        TestUtil.getScreenShot();
-        WebCommands.staticSleep(2000);
-    }
+
+
+
     public void qcDtails(String DataQC) {
 
         TestUtil.click(dataQC, " Data QC dropdown clicked");
