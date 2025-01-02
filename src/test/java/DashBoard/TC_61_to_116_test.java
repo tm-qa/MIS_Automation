@@ -9,9 +9,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import util.RetryAnalyser;
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "dash_61_116","Dashboard"})
+@Test(groups = {"Mis_Full", "dash_61_116","Dashboard"},retryAnalyzer = RetryAnalyser.class)
 public class TC_61_to_116_test extends TestBase {
 
     public LoginPage ninjaloginpage;

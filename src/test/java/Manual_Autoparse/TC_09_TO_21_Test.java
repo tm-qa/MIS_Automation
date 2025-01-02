@@ -5,10 +5,11 @@ import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.pages.manualautoparse.TC_09_TO_21_Page;
 import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.*;
+import util.RetryAnalyser;
 
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "TC_09_TO_21_Test"})
+@Test(groups = {"Mis_Full", "TC_09_TO_21_Test"},retryAnalyzer = RetryAnalyser.class)
 public class TC_09_TO_21_Test extends TestBase {
     public LoginPage ninjaloginpage;
     public TC_09_TO_21_Page TC_09_TO_21_Page;

@@ -199,7 +199,8 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetail() {
 
-        FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+       // FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
@@ -212,7 +213,8 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetailmanual() {
 
-        FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+       // FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");

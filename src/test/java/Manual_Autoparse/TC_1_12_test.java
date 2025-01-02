@@ -9,8 +9,9 @@ import com.qa.turtlemint.util.LogUtils;
 import com.qa.turtlemint.util.TestUtil;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import util.RetryAnalyser;
 
-@Test(groups = {"Mis_Full","TC_1_12_test"})
+@Test(groups = {"Mis_Full","TC_1_12_test"},retryAnalyzer = RetryAnalyser.class)
 public class TC_1_12_test extends TestBase {
 
     public LoginPage ninjaloginpage;
