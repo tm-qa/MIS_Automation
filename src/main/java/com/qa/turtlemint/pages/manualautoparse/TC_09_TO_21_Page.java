@@ -374,8 +374,10 @@ public class TC_09_TO_21_Page extends TestBase {
     }
 
     public void BackToHome(){
-        driver.get(prop.getProperty("ninjaurl"));
+       // driver.get(prop.getProperty("ninjaurl"));
+        driver.get(System.getProperty("ninjaurl"));
         WebCommands.staticSleep(2000);
+        TestUtil.getScreenShot();
     }
 
     public void PolicyDetails(){
