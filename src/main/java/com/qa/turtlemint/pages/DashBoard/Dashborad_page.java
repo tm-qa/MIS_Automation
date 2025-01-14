@@ -169,7 +169,7 @@ public class Dashborad_page extends TestBase {
         elementIsDisplaed(hamburger);
 
     }
-    public void verifyDashboardColumns(){
+    public void verifyDashboardColumns() throws IOException {
 
         List<WebElement > columns = driver.findElements(By.xpath("//table[@style=\"table-layout: fixed;\"]//th"));
 
@@ -181,6 +181,7 @@ public class Dashborad_page extends TestBase {
                 WebElement scrollableDiv = driver.findElement(By.cssSelector("div.ant-table-body"));
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollableDiv);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollLeft += 5000;", scrollableDiv);
+                TestUtil.getFullPageScreenShot();
             }
             elementIsDisplaed(element);
             i++;
@@ -189,6 +190,7 @@ public class Dashborad_page extends TestBase {
 
     public void VerifydateRangeAndFilterByCombination() throws InterruptedException, IOException {
         verifyDateRange();
+        TestUtil.getFullPageScreenShot();
         TestUtil.click(filterBy,"click on filter by");
         Thread.sleep(2000);
         List <WebElement> filterValues = driver.findElements(By.xpath("//div[@class=\"rc-virtual-list-holder-inner\"]//div[contains(@title,\"Date\")]"));
@@ -200,20 +202,19 @@ public class Dashborad_page extends TestBase {
             TestUtil.click(filterBy,"click on filter by");
         }
     }
-    public void verifyDateRange(){
+    public void verifyDateRange() throws IOException {
+        TestUtil.getFullPageScreenShot();
         TestUtil.click(startDate , "click on start date");
         String days = TestUtil.ninjaPastDate(5);
         TestUtil.sendKeys(startDate,days,"start date entered");
         TestUtil.click(endDate , "click on start date");
         TestUtil.sendKeys(endDate,TestUtil.ninjaPastDate(1),"end date entered");
         endDate.sendKeys(Keys.RETURN);
+        TestUtil.getFullPageScreenShot();
     }
-    public void verifyFilterAscendingDesending(){
+    public void verifyFilterAscendingDesending() throws IOException {
         verifyDateRange();
         List <WebElement > salesCloseDate = driver.findElements(By.xpath("//tbody[@class=\"ant-table-tbody\"]//tr[contains(@data-row-key,\"table-body-id\")]//td[12]"));
-
-
-
 
     }
 
