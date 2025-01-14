@@ -39,7 +39,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "//input[@placeholder=\"Search by Policy No. or Registration No. (min. 4 chars)\"]")
     WebElement search;
 
-    @FindBy(xpath = "//tbody[@class=\"ant-table-tbody\"]")
+    @FindBy(xpath = "//div[@class=\"sc-fHjqPf iFCspv\"]")
     public WebElement policyCkicked;
 
 
