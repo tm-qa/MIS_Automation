@@ -178,8 +178,9 @@ public class TC_09_TO_21_Page extends TestBase {
     WebElement male;
     @FindBy(xpath = "//label[@title='Date of Birth']//parent ::div//following-sibling::div")
     WebElement dob;
-    @FindBy(xpath = "(//button[text()='2024'])[5]")
+    @FindBy(xpath = "(//button[text()='2025'])[5]")
     WebElement year2024;
+
     @FindBy(xpath = "(//button[@tabindex='-1'])[25]")
     WebElement previousyear;
     @FindBy(xpath = "//td[@title='2001']")
