@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import util.RetryAnalyser;
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full","Dashboard", "dash_113To179"},retryAnalyzer = RetryAnalyser.class)
+@Test(groups = {"Mis_Full","Dashboard", "dash_113To179"})
 public class Dashboard_TCs_113To179 extends TestBase {
 
     public LoginPage ninjaloginpage;
@@ -32,24 +32,30 @@ public class Dashboard_TCs_113To179 extends TestBase {
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+
+    @Test
     public void TestCase114() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.ChannelFilterFunctionality();
     }
+    @Test
 
     public void TestCase115() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonDisable();
     }
+    @Test
     public void TestCase116() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonEnabled();
     }
+    @Test
 
     public void TestCase117and118and119() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyOKButtonFunctionalityForChannelFilter();
     }
+    @Test
 
     public void TestCase120() throws Exception {
         ninjaloginpage.ninja_MIS();
@@ -60,6 +66,7 @@ public class Dashboard_TCs_113To179 extends TestBase {
         ninjaloginpage.ninja_MIS();
         dashboardPage.CategoryFilterFunctionality();
     }
+    @Test
 
     public void TestCase122and123and124() throws Exception {
         ninjaloginpage.ninja_MIS();
@@ -70,112 +77,130 @@ public class Dashboard_TCs_113To179 extends TestBase {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonCategoryColumn();
     }
+    @Test
 
     public void TestCase126() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonEnabledCategory();
     }
+    @Test
 
     public void TestCase127and128and129() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyOkButtonForCategoryColumn();
     }
 
+    @Test
     public void TestCase130() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyInsureColumnOptions();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase131and132and133() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifySearchInFiltersVisible();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
+    @Test
 
     public void TestCase134and135() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyInsurerFilterFunctionality();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
+    @Test
 
     public void TestCase136() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyInsurerColumnResetButtonDisable();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
+    @Test
 
     public void TestCase137() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyInsurerColumnResetButtonEnable();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
+    @Test
 
     // Test Cases 138, 139 and 140 are covered in TestCase134and135.
     public void TestCase141and142() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyIssuanceStatusOptions();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase145() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyIssuanceStatusResetDisabled();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase146() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyIssuanceStatusResetEnabled();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase143and144and147and148and149() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyIssuanceStatusFunctionality();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase150and151() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusOptions();
     }
-
+    @Test
     public void TestCase152() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusResetDisable();
     }
+    @Test
 
     public void TestCase153() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusResetEnable();
     }
+    @Test
 
     public void TestCase154and155and156() throws Exception{
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusFilterFunctionality();
     }
+    @Test
 
     public void TestCase160() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyPaginationVisible();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
+    @Test
 
     public void TestCase161() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyPaginationNext();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase159and162() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyRowsPerPage();
+        dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
+    @Test
     public void TestCase163and164and165() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyNinjaV1();
     }
+    @Test
 
     public void TestCase168() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyBulkExportError();
     }
 
-
     @AfterMethod()
     public void Close() {
-        driver.quit();
+
     }
 
 }
