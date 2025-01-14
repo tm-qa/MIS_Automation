@@ -67,7 +67,7 @@ public class TC_61_to_116_test extends TestBase {
     @Test()
     public void SalesStatusFilterTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        DB.SalesStatusFilter();
+        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
     }
 
     @Test()
@@ -79,7 +79,7 @@ public class TC_61_to_116_test extends TestBase {
     @Test()
     public void CreationSourceFilterValueTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        DB.CreationSourceFilterValue();
+        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
     }
 
     @AfterMethod()
