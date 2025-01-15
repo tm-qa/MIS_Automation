@@ -3,10 +3,14 @@ package DashBoard;
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.pages.DashBoard.Dashboard_Pagee;
 import com.qa.turtlemint.pages.login.LoginPage;
+import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(iTestListener.class)
+@Test(groups = {"Mis_Full","Dashboard", "dash_113To179"})
 public class Dashboard extends TestBase {
 
 
