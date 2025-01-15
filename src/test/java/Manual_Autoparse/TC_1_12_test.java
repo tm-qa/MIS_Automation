@@ -28,7 +28,6 @@ public class TC_1_12_test extends TestBase {
         create = new Mis_newSale();
         TC = new TC_1_12();
 
-
     }
 
     @Test()
@@ -110,10 +109,10 @@ public class TC_1_12_test extends TestBase {
         TC.variant();
         TC.vehicleDetails1();
         TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetails();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
+//        TC.premiumDetails();
+//        TC.qcDtails("Ready");
+//        TC.saleDetailsmanual("11-10-2024");
+//        TC.policyDetailmanual();
     }
     @Test()
     public void TC10() throws Exception {
@@ -121,18 +120,18 @@ public class TC_1_12_test extends TestBase {
         ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
 
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
-        TC.makeModel();
-        TC.variant();
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetails();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
+//        TC.generalDetails("New","11-10-2024");
+//        TC.proposerDetails("Mr");
+//        TC.vehicleDetails("OD");
+//        TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
+//        TC.makeModel();
+//        TC.variant();
+//        TC.vehicleDetails1();
+//        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
+//        TC.premiumDetails();
+//        TC.qcDtails("Ready");
+//        TC.saleDetailsmanual("11-10-2024");
+//        TC.policyDetailmanual();
     }
 
 

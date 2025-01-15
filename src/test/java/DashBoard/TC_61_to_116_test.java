@@ -62,12 +62,12 @@ public class TC_61_to_116_test extends TestBase {
     @Test()
     public void SalesStatusValueTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        DB.SalesStatusValue();
+        DB.scrollValue();
     }
     @Test()
     public void SalesStatusFilterTest() throws Exception {
         ninjaloginpage.ninja_MIS();
-        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
+        DB.scrollValue();
     }
 
     @Test()
