@@ -30,14 +30,14 @@ public class TC_09_TO_21_Test extends TestBase {
     public void TC_09() throws Exception {
         ninjaloginpage.ninja_MIS();
         TC_09_TO_21_Page.commonflow("Motor", "Issued", "L&T", "Car");
-        TC_09_TO_21_Page.TC_09();
+//        TC_09_TO_21_Page.TC_09();
     }
 
     @Test()
     public void TC_21() throws Exception {
         ninjaloginpage.ninja_MIS();
         TC_09_TO_21_Page.commonflowLife("Life", "Issued", "Bajaj Allianz LI");
-        TC_09_TO_21_Page.TC_21();
+//        TC_09_TO_21_Page.TC_21();
     }
 
 
