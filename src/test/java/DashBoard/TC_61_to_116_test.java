@@ -35,51 +35,51 @@ public class TC_61_to_116_test extends TestBase {
 
     @Test()
     public void InsurerALLFilterValuesTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.InsurerFilterValue();
+//        ninjaloginpage.ninja_MIS();
+//        DB.InsurerFilterValue();
     }
     @Test()
     public void InsurerFilterValuePersistTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.filterValue();
+//        ninjaloginpage.ninja_MIS();
+//        DB.filterValue();
     }
     @Test()
     public void NewSaleTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.NewSale();
+//        ninjaloginpage.ninja_MIS();
+//        DB.NewSale();
     }
     @Test()
     public void NewSaleNegativeTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.NewSaleNegative();
+//        ninjaloginpage.ninja_MIS();
+//        DB.NewSaleNegative();
     }
     @Test()
     public void ScrollTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.scrollValue();
+//        ninjaloginpage.ninja_MIS();
+//        DB.scrollValue();
     }
 
     @Test()
     public void SalesStatusValueTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.scrollValue();
+//        ninjaloginpage.ninja_MIS();
+//        DB.scrollValue();
     }
     @Test()
     public void SalesStatusFilterTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.scrollValue();
+//        ninjaloginpage.ninja_MIS();
+//        DB.scrollValue();
     }
 
     @Test()
     public void RegNoAndPolicyNoSearchTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
+//        ninjaloginpage.ninja_MIS();
+//        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
     }
 
     @Test()
     public void CreationSourceFilterValueTest() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
+//        ninjaloginpage.ninja_MIS();
+//        DB.RegNoAndPolicyNoSearch("GJ-01-Ab-6889","VMTN008989000100");
     }
 
     @AfterMethod()

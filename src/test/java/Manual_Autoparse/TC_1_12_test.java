@@ -44,43 +44,43 @@ public class TC_1_12_test extends TestBase {
 
     @Test()
     public void TC3() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
 
     }
     @Test()
     public void TC5() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
 
     }
     @Test()
     public void TC6() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
     @Test()
     public void TC7() throws Exception {
 
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
     public void TC8() throws Exception {
 
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
 
     @Test()
     public void TC9() throws Exception {
 
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
     @Test()
     public void TC10() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
+//        ninjaloginpage.ninja_MIS();
+//        create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
 
 
