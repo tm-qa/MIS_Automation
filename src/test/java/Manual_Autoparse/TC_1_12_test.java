@@ -79,7 +79,6 @@ public class TC_1_12_test extends TestBase {
     }
     @Test()
     public void TC10() throws Exception {
-
         ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
     }
