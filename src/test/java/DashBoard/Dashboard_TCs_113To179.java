@@ -155,52 +155,12 @@ public class Dashboard_TCs_113To179 extends TestBase {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusResetDisable();
     }
-    @Test
 
-    public void TestCase153() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyCallStatusResetEnable();
-    }
-    @Test
-
-    public void TestCase154and155and156() throws Exception{
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyCallStatusFilterFunctionality();
-    }
-    @Test
-
-    public void TestCase160() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyChannelColumnFilterOptions();
-    }
-    @Test
-
-    public void TestCase161() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyChannelColumnFilterOptions();
-    }
-
-    @Test
-    public void TestCase159and162() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyChannelColumnFilterOptions();
-    }
-
-    @Test
-    public void TestCase163and164and165() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyNinjaV1();
-    }
-    @Test
-
-    public void TestCase168() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyBulkExportError();
-    }
 
     @AfterMethod()
     public void Close() {
 
+        driver.quit();
     }
 
 }

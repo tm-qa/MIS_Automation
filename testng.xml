@@ -26,6 +26,7 @@
             <class name="DashBoard.Dashboard_TCs_113To179"></class>
             <class name="Manual_Autoparse.TC_09_TO_21_Test"></class>
             <class name="Manual_Autoparse.TC_1_12_test"></class>
+            <class name="DashBoard.Dashboard"></class>
 
         </classes>
 
