@@ -1,7 +1,6 @@
 package com.qa.turtlemint.util;
 
 import com.assertthat.selenium_shutterbug.core.Capture;
-import com.assertthat.selenium_shutterbug.core.PageSnapshot;
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import com.github.javafaker.Faker;
 import com.qa.turtlemint.commands.WebCommands;
@@ -16,7 +15,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +28,6 @@ import java.util.List;
 import java.util.Random;
 
 import static com.qa.turtlemint.base.TestBase.driver;
-import static com.qa.turtlemint.base.TestBase.prop;
 
 public class TestUtil {
 
@@ -61,7 +58,7 @@ public class TestUtil {
         return timeStamp;
     }
 
-    public void GenerateRegNo() {
+    public String GenerateRegNo() {
         int alpha1 = 'A' + (int) (Math.random() * ('Z' - 'A'));
         int alpha2 = 'A' + (int) (Math.random() * ('Z' - 'A'));
         // int alpha3 = 'A' + (int)(Math.random() * ('Z' - 'A'));
@@ -72,10 +69,11 @@ public class TestUtil {
         RegNo = ("MH39" + (char) (alpha1) + ((char) (alpha2)) +
                 +digit1 + digit2 + digit3 + digit4);
         System.out.println(RegNo + "IN test UTIL");
+        return RegNo;
     }
 
     public static void click(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
         LogUtils.info(msg);
