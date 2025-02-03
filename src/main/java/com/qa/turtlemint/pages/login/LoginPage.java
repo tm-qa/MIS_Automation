@@ -37,8 +37,11 @@ public class LoginPage extends TestBase {
         WebCommands.staticSleep(3000);
 
         TestUtil.sendKeys(emailgoogle, "automationtesting@turtlemint.com", "email Id entered");
+        WebCommands.staticSleep(3000);
         TestUtil.sendKeys(emailgoogle, String.valueOf(Keys.RETURN), "email Id entered");
+        WebCommands.staticSleep(3000);
         TestUtil.sendKeys(passworgoogle, "Turtle@2024", "Password entered");
+        WebCommands.staticSleep(3000);
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
 
