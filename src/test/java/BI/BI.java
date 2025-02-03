@@ -23,25 +23,19 @@ public class BI extends TestBase {
         super();
     }
 
-    @BeforeClass()
+    @BeforeMethod()
     public void start() throws Exception {
         initialization();
         ninjaloginpage = new LoginPage();
         flow = new Mis_newSale();
         bi = new BI_pages();
         id = new junk();
-
-        ninjaloginpage.ninja_PI();
     }
 
-    @BeforeMethod
-    public void a() {
-        ninjaloginpage.loginless();
-
-    }
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_01() throws Exception {
+        ninjaloginpage.ninja_PI();
         flow.PI_productCatagory_Status_insurer("TW", "HDFC ergo");
 
         bi.PolicyCreateForBI("TW");
@@ -59,6 +53,7 @@ public class BI extends TestBase {
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_02() throws Exception {
+        ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("TW", "Bajaj");
         bi.PolicyCreateForBI("TW");
@@ -149,7 +144,7 @@ public class BI extends TestBase {
 //    }
 
 
-    @AfterClass()
+    @AfterMethod()
     public void Close() {
            driver.quit();
     }
