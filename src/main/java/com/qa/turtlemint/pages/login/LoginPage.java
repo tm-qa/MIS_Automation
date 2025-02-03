@@ -80,7 +80,8 @@ public class LoginPage extends TestBase {
     }
 
     public void loginless(){
-        driver.get("https://ninja.turtlemint.com/branch-issuance");
+      //  driver.get("https://ninja.sanity.turtle-feature.com/branch-issuance");
+        driver.get(System.getProperty("ninjaurl")+"branch-issuance");
     }
 
 }

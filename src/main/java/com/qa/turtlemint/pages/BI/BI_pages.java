@@ -148,6 +148,9 @@ public class BI_pages extends TestBase {
     @FindBy(xpath = "//li[@aria-setsize=\"12\"]")
     WebElement select1stplaneName;
 
+    @FindBy(xpath = "(//li[@aria-posinset=\"1\"])[2]")
+    WebElement a1st;
+
     @FindBy(xpath = "//md-radio-button[@data-auto=\"paymentMode-ONLINE-radio\"]")
     WebElement online;
 
@@ -192,6 +195,7 @@ public class BI_pages extends TestBase {
         TestUtil.sendKeys(proposalPhone, "6999912345", "phone no entered");
         TestUtil.sendKeys(proposalEmail, "test@t.com", "Email entered");
         TestUtil.sendKeys(proposalNo, TestUtil.generateRandomPolicyNo(9), "Policy No entered");
+        WebCommands.staticSleep(2000);
         TestUtil.click(issuanceDate, "");
         WebCommands.staticSleep(2000);
         TestUtil.click(todayDate, "Date select today");
@@ -224,15 +228,16 @@ public class BI_pages extends TestBase {
         TestUtil.click(PartnerName, "PartnerName select");
         WebCommands.staticSleep(1000);
         TestUtil.sendKeys(PartnerName, "mr automation", "mr automation entered");
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(5000);
         TestUtil.click(select1st, "1st select");
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(12000);
         TestUtil.click(proposerTitle, "");
         WebCommands.staticSleep(1000);
         TestUtil.click(mr, "mr select");
         TestUtil.sendKeys(proposerFName, "Automation", "proposerFName entered");
         TestUtil.sendKeys(proposerLName, "Test", "proposerLName entered");
         TestUtil.sendKeys(proposalPhone, "6999912345", "phone no entered");
+        WebCommands.staticSleep(1000);
         TestUtil.sendKeys(proposalEmail, "test@t.com", "Email entered");
         TestUtil.click(typeOfBusiness,"");
         TestUtil.click(KEYMAN,"KEYMAN slect");
@@ -257,7 +262,9 @@ public class BI_pages extends TestBase {
         WebCommands.staticSleep(1000);
         TestUtil.sendKeys(maritalStatus,"Married","maritalStatus");
         TestUtil.click(tmPlanId,"tmPlanId");
-        TestUtil.click(select1stplaneName,"select 1st plane");
+        TestUtil.sendKeys(tmPlanId,"smart","tmPlanId");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(a1st,"");
         TestUtil.click(online,"online select");
         TestUtil.click(paymentStatus,"");
         TestUtil.click(Complete,"Complete");
@@ -282,8 +289,8 @@ public class BI_pages extends TestBase {
         TestUtil.click(policyClicked, "policy pdf uploaded");
         TestUtil.click(done, "Clicked on ok button");
         WebCommands.staticSleep(2000);
-      //  TestUtil.click(save, "Clicked on save button");
-        WebCommands.staticSleep(2000);
+        TestUtil.click(save, "Clicked on save button");
+        WebCommands.staticSleep(5000);
         TestUtil.getScreenShot();
     }
 
@@ -294,7 +301,7 @@ public class BI_pages extends TestBase {
         TestUtil.click(PaymentProof, "PaymentProof pdf uploaded");
         TestUtil.click(done, "Clicked on ok button");
         WebCommands.staticSleep(2000);
-      //     TestUtil.click(save, "Clicked on save button");
+           TestUtil.click(save, "Clicked on save button");
         WebCommands.staticSleep(4000);
         TestUtil.getScreenShot();
     }

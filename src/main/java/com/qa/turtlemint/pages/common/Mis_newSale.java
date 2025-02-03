@@ -102,11 +102,14 @@ public class Mis_newSale extends TestBase {
 
         TestUtil.click(insurerPI, "");
         TestUtil.sendKeys(insurerPI, insurer, " insurer select clicked");
+        TestUtil.click(insurerPI, "");
         TestUtil.click(click1st, insurer + " insurer select");
 
         TestUtil.sendKeys(PolicyNo, TestUtil.generateRandomPolicyNo(7), "Policy Number entered");
 
         TestUtil.click(Proceed, " create Sale clicked");
+        WebCommands.staticSleep(3000);
+
     }
 
     public void PI_productCatagory_HealtLife(String TW_FW_LIFE_HEALTH, String insurer) {
@@ -126,6 +129,9 @@ public class Mis_newSale extends TestBase {
 
         TestUtil.click(insurerPI, "");
         TestUtil.sendKeys(insurerPI, insurer, " insurer select clicked");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(insurerPI, "");
+        WebCommands.staticSleep(2000);
         TestUtil.click(click1st, insurer + " insurer select for " + TW_FW_LIFE_HEALTH + " health");
 
         if (TW_FW_LIFE_HEALTH == "HEALTH") {
@@ -135,5 +141,6 @@ public class Mis_newSale extends TestBase {
         }
 
         TestUtil.click(Proceed, " create Sale clicked");
+        WebCommands.staticSleep(3000);
     }
 }

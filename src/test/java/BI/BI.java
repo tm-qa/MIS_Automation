@@ -5,8 +5,13 @@ import com.qa.turtlemint.pages.BI.BI_pages;
 import com.qa.turtlemint.pages.common.Mis_newSale;
 import com.qa.turtlemint.pages.common.junk;
 import com.qa.turtlemint.pages.login.LoginPage;
+import com.qa.turtlemint.util.RetryAnalyser;
+import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.*;
 
+
+@Listeners(iTestListener.class)
+@Test(groups = {"Mis_Full", "BI_flow"})
 public class BI extends TestBase {
     public LoginPage ninjaloginpage;
     BI_pages bi;
@@ -35,55 +40,65 @@ public class BI extends TestBase {
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_01() throws Exception {
         flow.PI_productCatagory_Status_insurer("TW", "HDFC ergo");
+
         bi.PolicyCreateForBI("TW");
+        String policyid = id.policyID.getText();
+        System.out.println("*****************    " + policyid + "     *******************");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+
+        id.policyid(policyid);
+
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"TW");
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_02() throws Exception {
         //  ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("TW", "Bajaj");
         bi.PolicyCreateForBI("TW");
+        String policyid = id.policyID.getText();
+        System.out.println("*****************    " + policyid + "     *******************");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+
+        id.policyid(policyid);
+
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"TW");
 
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_03() throws Exception {
         // ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("FW", "L&T");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"FW");
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_04() throws Exception {
         // ninjaloginpage.ninja_MIS();
-        // flow.Motor_productCatagory_Status_insurer("Motor", "Issued", "HDFC Ergo Health", "Car");
         flow.PI_productCatagory_Status_insurer("FW", "HDFC Ergo Health");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"FW");
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_05_12() throws Exception {
         //ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_HealtLife("LIFE", "Bajaj");
@@ -91,43 +106,47 @@ public class BI extends TestBase {
         bi.PolicyUploadforBILIFE();
         String misID = id.idBI.getAttribute("value");
         System.out.println("**********************************    " + misID + "     *********************************");
-        id.JunkPolicyBI(misID);
+        id.JunkPolicyBI(misID,"life");
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_06() throws Exception {
         //  ninjaloginpage.ninja_MIS();
        // flow.Motor_productCatagory_Status_insurer("TW", "Issued", "NAVI", "TW");
         flow.PI_productCatagory_Status_insurer("TW", "NAVI");
         bi.PolicyCreateForBI("TW");
+        String policyid = id.policyID.getText();
+        System.out.println("*****************    " + policyid + "     *******************");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+
+        id.policyid(policyid);
+
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"TW");
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_07() throws Exception {
         // ninjaloginpage.ninja_MIS();
-       // flow.Motor_productCatagory_Status_insurer("Motor", "Issued", "NAVI", "Car");
         flow.PI_productCatagory_Status_insurer("FW", "NAVI");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
-//        String misID = id.idBI.getAttribute("value");
-//        System.out.println("*****************    " + misID + "     *******************");
-//        id.JunkPolicyBI(misID);
+        String misID = id.idBI.getAttribute("value");
+        System.out.println("*****************    " + misID + "     *******************");
+        id.JunkPolicyBI(misID,"FW");
 
     }
 
-    @Test()
-    public void TC_08() throws Exception {
-        // ninjaloginpage.ninja_MIS();
-        flow.PI_productCatagory_HealtLife("HEALTH", "Liberty");
-      //  bi.PolicyCreateForBI_LIfe();
-
-    }
+//    @Test(retryAnalyzer = RetryAnalyser.class)
+//    public void TC_08() throws Exception {
+//        // ninjaloginpage.ninja_MIS();
+//     //   flow.PI_productCatagory_HealtLife("HEALTH", "Liberty");
+//      //  bi.PolicyCreateForBI_LIfe();
+//
+//    }
 
 
     @AfterClass()
