@@ -72,6 +72,7 @@ public class BI extends TestBase {
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_03() throws Exception {
+        ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("FW", "L&T");
         bi.PolicyCreateForBI("FW");
@@ -84,6 +85,7 @@ public class BI extends TestBase {
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_04() throws Exception {
+        ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("FW", "HDFC Ergo Health");
         bi.PolicyCreateForBI("FW");
@@ -95,6 +97,7 @@ public class BI extends TestBase {
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_05_12() throws Exception {
+        ninjaloginpage.ninja_PI();
         //ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_HealtLife("LIFE", "Bajaj");
         bi.PolicyCreateForBI_LIfe();
@@ -107,6 +110,7 @@ public class BI extends TestBase {
 
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_06() throws Exception {
+        ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
        // flow.Motor_productCatagory_Status_insurer("TW", "Issued", "NAVI", "TW");
         flow.PI_productCatagory_Status_insurer("TW", "NAVI");
@@ -126,6 +130,7 @@ public class BI extends TestBase {
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC_07() throws Exception {
         // ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_PI();
         flow.PI_productCatagory_Status_insurer("FW", "NAVI");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
