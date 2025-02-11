@@ -33,10 +33,6 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//input[@id=\"NCB\"]")
     WebElement NCB;
 
-
-
-
-
     @FindBy(xpath = "//input[@id=\"Motor_manualQCStatus\"]")
     WebElement dataQC;
 
@@ -81,12 +77,16 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//input[@id=\"Motor_odRiskEndDate\"]")
     WebElement odriskenddate;
 
-    @FindBy(xpath = "//input[@id=\"rc_select_12\"]")
+    @FindBy(xpath = "//div[@id=\"Motor_makemodel\"]//input")
     WebElement makemodel;
 
-    @FindBy(xpath = "//div[text()=\"Fiat Base 500\"]")
+    @FindBy(xpath = "//div[text()=\"Fidato Easy Go\"]")
     WebElement fiat_base500;
-    @FindBy(xpath = "(//div[text()=\"Sports (1248 CC)\"])[2]")
+
+    @FindBy(xpath = "//div[text()=\"Fiat Base 500\"]")
+    WebElement fiat_base50;
+
+    @FindBy(xpath = "(//div[@title=\"Lithium-Ion 60V 28Ah (1 CC)\"])")
     WebElement sports;
 
 
@@ -112,20 +112,6 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//input[@id=\"NetPremium\"]")
     WebElement netpremium;
 
-
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//div[text()=\"14\"]")
-    WebElement date;
     @FindBy(xpath = "//input[@id=\"AutoParsing_turtlemintBrokerCode\"]//parent::span")
     WebElement tmbrokercodecheckboxauto;
     @FindBy(xpath = "//input[@id=\"Motor_turtlemintBrokerCode\"]//parent::span")
@@ -144,6 +130,15 @@ public class TC_1_12 extends TestBase {
     WebElement savebuttonmanual;
     @FindBy(xpath = "//input[@name=\"policyNumber\"]")
     WebElement policynumber;
+
+    @FindBy(xpath = "//*[@data-icon=\"arrow-left\"]")
+    public WebElement backArrow;
+
+    @FindBy(xpath = "//p[text()=\"Warning! Duplicate Policy Detected\"]")
+    public WebElement warning;
+
+
+
     public TC_1_12() {
         PageFactory.initElements(driver, this);
     }
@@ -167,10 +162,11 @@ public class TC_1_12 extends TestBase {
 
     }
 
+
     public void generalDetails(String bussinessType, String issuanceDate) {
 
         TestUtil.click(tmbrokercodecheckboxmanual, "Check box selected");
-        TestUtil.sendKeys(policynumber, "988822211", "policy number entered");
+        TestUtil.sendKeys(policynumber, TestUtil.generateRandomPolicyNo(8), "policy number entered");
 
         TestUtil.click(bussinesstypemanual, " Business type dropdown clicked");
         WebElement BT = driver.findElement(By.xpath("//div[@title='" + bussinessType + "']"));
@@ -199,7 +195,7 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetail() {
 
-       // FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+//      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
@@ -213,7 +209,7 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetailmanual() {
 
-       // FileUpload.sendKeys("/Users/nitinrathod/Downloads/Sprint 140.pdf");
+//        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
@@ -243,11 +239,13 @@ public class TC_1_12 extends TestBase {
     }
 
     public void vehicleDetails(String productName) {
+        String regN  = TestUtil.getRandomTransactionNo(4);
+        String registrationNumber  = "MH-03-ZZ-"+regN;
 
         TestUtil.click(productNamedrop, " Product name dropdown clicked");
         WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
         TestUtil.click(PN, productName + " Procduct name selected");
-        TestUtil.sendKeys(regisNumber, "MH-03-ZZ-1234", "Registration number entered");
+        TestUtil.sendKeys(regisNumber, registrationNumber, "Registration number entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }
@@ -272,9 +270,15 @@ public class TC_1_12 extends TestBase {
 
     }
     public void premiumDetails() {
-
         TestUtil.sendKeys(totalodpremium, "2500"," Total OD premium entered");
-        TestUtil.sendKeys(totaltppremium,"2500","Total tp premium entered");
+       TestUtil.sendKeys(totaltppremium,"2500","Total tp premium entered");
+        TestUtil.sendKeys(netpremium,"2012","Net premium entered");
+        TestUtil.getScreenShot();
+        WebCommands.staticSleep(2000);
+    }
+
+    public void premiumDetailsTw() {
+        TestUtil.sendKeys(totalodpremium, "2500"," Total OD premium entered");
         TestUtil.sendKeys(netpremium,"2012","Net premium entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
@@ -294,14 +298,43 @@ public class TC_1_12 extends TestBase {
         WebCommands.staticSleep(2000);
         TestUtil.getScreenShot();
     }
+
+    public void makeModelMotor(String makeModel){
+        TestUtil.click(makemodel, " MakeModel clicked");
+        WebCommands.staticSleep(2000);
+        new Actions(driver)
+                .keyDown(Keys.SHIFT)
+                .sendKeys("f")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("i")
+                .perform();
+        WebCommands.staticSleep(2000);
+        WebElement getMakeModel = driver.findElement(By.xpath("//div[@title='"+makeModel+"' ]"));
+        TestUtil.click(getMakeModel, " fiat_base500 selected");
+        WebCommands.staticSleep(2000);
+        TestUtil.getScreenShot();
+    }
     public void variant(){
         Actions builder = new Actions(driver);
         builder.moveToElement( variantdrop ).click( variantdrop);
         WebCommands.staticSleep(2000);
         builder.perform();
         new Actions(driver)
-                .sendKeys("s");
+                .sendKeys("l");
         TestUtil.click(sports,"variant selected");
+        TestUtil.getScreenShot();
+    }
+    public void addVariant(String variant){
+        TestUtil.click(variantdrop , "click on varient dp");
+        WebElement getVariant = driver.findElement(By.xpath("//div[@title= '"+ variant +"' ]"));
+        System.out.println( getVariant);
+        TestUtil.click(getVariant , "select varient");
+
+        Actions builder = new Actions(driver);
+        builder.moveToElement( variantdrop ).click( variantdrop);
+        builder.perform();
+        new Actions(driver).click(getVariant);
+
         TestUtil.getScreenShot();
     }
 
