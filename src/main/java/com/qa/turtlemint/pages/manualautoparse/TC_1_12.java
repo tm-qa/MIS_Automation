@@ -239,9 +239,8 @@ public class TC_1_12 extends TestBase {
     }
 
     public void vehicleDetails(String productName) {
-        String regN  = TestUtil.getRandomTransactionNo(4);
+        String regN  = TestUtil.getRandomTransactionNo();
         String registrationNumber  = "MH-03-ZZ-"+regN;
-
         TestUtil.click(productNamedrop, " Product name dropdown clicked");
         WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
         TestUtil.click(PN, productName + " Procduct name selected");
