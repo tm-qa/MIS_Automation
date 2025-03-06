@@ -40,7 +40,7 @@ public class LoginPage extends TestBase {
         WebCommands.staticSleep(3000);
         TestUtil.sendKeys(emailgoogle, String.valueOf(Keys.RETURN), "email Id entered");
         WebCommands.staticSleep(3000);
-        TestUtil.sendKeys(passworgoogle, "Turtle@2024", "Password entered");
+        TestUtil.sendKeys(passworgoogle, "Turtle@2026", "Password entered");
         WebCommands.staticSleep(3000);
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
@@ -62,7 +62,7 @@ public class LoginPage extends TestBase {
 
         TestUtil.getScreenShot();
         driver.get(System.getProperty("ninjaurl"));
-        //  driver.get(prop.getProperty("ninjaurl"));
+//         driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(2000);
         TestUtil.click(SignInbtn, "Sign in button clicked");
