@@ -2,6 +2,7 @@ package com.qa.turtlemint.pages.login;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
+import com.qa.turtlemint.util.LogUtils;
 import com.qa.turtlemint.util.TestUtil;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -31,6 +32,33 @@ public class LoginPage extends TestBase {
 
     @FindBy(xpath = "//input[@aria-label=\"Employee ID\"]")
     WebElement Employe;
+
+    @FindBy(name = "mobileNumber")
+    WebElement MobileNumber;
+
+    @FindBy(xpath = "//span[text()='GET OTP']")
+    WebElement GetOTP;
+
+    @FindBy(xpath = "//input[@class='OTPInput']")
+    WebElement OTPField;
+
+    @FindBy(xpath = "//span[text()='Verify OTP']")
+    WebElement VerifyOTPBtn;
+
+    @FindBy(xpath = "//span[text()='Sell']")
+    WebElement SellBtn;
+
+    @FindBy(xpath = "//input[@id='customerName']")
+    WebElement name;
+
+    @FindBy(xpath = "//input[@placeholder=\"Name\"]")
+    WebElement name1;
+
+    @FindBy(xpath = "//span[text()='Next']//parent::button")
+    WebElement NextButton1;
+
+    @FindBy(id = "container-next-btn")
+    WebElement NextButton;
 
     public void NinjaLogin() throws InterruptedException {
         driver.get("https://accounts.google.com/");
@@ -86,5 +114,32 @@ public class LoginPage extends TestBase {
       //  driver.get("https://ninja.sanity.turtle-feature.com/branch-issuance");
         driver.get(System.getProperty("ninjaurl")+"branch-issuance");
     }
+    public void ValidateLogin(String username, String otp) {
+        String strUrl = driver.getCurrentUrl();
+        LogUtils.info("Opened Website: " + strUrl);
+        TestUtil.sendKeys(MobileNumber, username, "Mobile Number Entered");
+        TestUtil.click(GetOTP, "Continue pressed");
+        TestUtil.sendKeys(OTPField, otp, "OTP Entered");
+        TestUtil.click(VerifyOTPBtn, "Login Successful");
+        WebCommands.staticSleep(4000);
+        TestUtil.click(SellBtn , "click on sell button");
+    }
+
+    public void SaveLead(String LeadName) throws InterruptedException {
+
+        name.sendKeys(LeadName);
+        LogUtils.info("All Details Filled and Lead Name Entered");
+        NextButton.click();
+        WebCommands.staticSleep(2000);
+    }
+
+    public void SaveLead1(String LeadName) throws InterruptedException {
+
+        name1.sendKeys(LeadName);
+        LogUtils.info("All Details Filled and Lead Name Entered");
+        NextButton1.click();
+        WebCommands.staticSleep(2000);
+    }
+
 
 }
