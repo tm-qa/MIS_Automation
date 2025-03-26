@@ -74,18 +74,18 @@ public class LoginPage extends TestBase {
         WebCommands.staticSleep(8000);
 
 
-//        try {
-//            Thread.sleep(3000);
-//            TestUtil.getScreenShot();
-//            TestUtil.sendKeys(Employe, "FBS4825", "Employee ID entered");
-//            Thread.sleep(3000);
-//            TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
-//
-//            Thread.sleep(10000);
-//
-//        }catch (Exception e){
-//            System.out.println("******");
-//        }
+        try {
+            Thread.sleep(3000);
+            TestUtil.getScreenShot();
+            TestUtil.sendKeys(Employe, "FBS4825", "Employee ID entered");
+            Thread.sleep(3000);
+            TestUtil.sendKeys(Employe, String.valueOf(Keys.RETURN), "Password entered");
+
+            Thread.sleep(10000);
+
+        }catch (Exception e){
+            System.out.println("******");
+        }
 
 
         TestUtil.getScreenShot();
