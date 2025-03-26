@@ -93,7 +93,9 @@ public class Mis_newSale extends TestBase {
 
     public void PI_productCatagory_Status_insurer(String TW_FW_LIFE_HEALTH, String insurer) {
         TestUtil.click(reportASAle, "report a sale clicked");
+        WebCommands.staticSleep(2000);
         TestUtil.click(report, "report a sale clicked");
+        WebCommands.staticSleep(2000);
         TestUtil.click(productPI, " policy catagory clicked");
         WebCommands.staticSleep(2000);
         WebElement PC = driver.findElement(By.xpath("(//md-option[@value='" + TW_FW_LIFE_HEALTH + "'])[2]"));
@@ -102,10 +104,12 @@ public class Mis_newSale extends TestBase {
 
         TestUtil.click(insurerPI, "");
         TestUtil.sendKeys(insurerPI, insurer, " insurer select clicked");
+        WebCommands.staticSleep(1000);
         TestUtil.click(insurerPI, "");
         TestUtil.click(click1st, insurer + " insurer select");
 
         TestUtil.sendKeys(PolicyNo, TestUtil.generateRandomPolicyNo(7), "Policy Number entered");
+        WebCommands.staticSleep(1000);
 
         TestUtil.click(Proceed, " create Sale clicked");
         WebCommands.staticSleep(3000);
@@ -114,7 +118,9 @@ public class Mis_newSale extends TestBase {
 
     public void PI_productCatagory_HealtLife(String TW_FW_LIFE_HEALTH, String insurer) {
         TestUtil.click(reportASAle, "report a sale clicked");
+        WebCommands.staticSleep(2000);
         TestUtil.click(report, "report a sale clicked");
+        WebCommands.staticSleep(2000);
         TestUtil.click(productPI, " policy catagory clicked");
         WebCommands.staticSleep(2000);
         WebElement PC = driver.findElement(By.xpath("(//md-option[@value='" + TW_FW_LIFE_HEALTH + "'])[2]"));

@@ -7,11 +7,17 @@ import com.qa.turtlemint.pages.login.LoginPage;
 
 import com.qa.turtlemint.util.LogUtils;
 import com.qa.turtlemint.util.TestUtil;
+import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import util.RetryAnalyser;
 
+
+
+@Listeners(iTestListener.class)
+@Test(groups = {"Mis_Full", "CI"})
 public class CI_Test extends TestBase {
 
     public CI_Test() {

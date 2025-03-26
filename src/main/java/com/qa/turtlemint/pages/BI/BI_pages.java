@@ -283,8 +283,8 @@ public class BI_pages extends TestBase {
 
 
     public void PolicyUploadforBI() {
-        FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
-        // FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+       // FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
+         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policyClicked, "policy pdf uploaded");
         TestUtil.click(done, "Clicked on ok button");
@@ -295,8 +295,8 @@ public class BI_pages extends TestBase {
     }
 
     public void PolicyUploadforBILIFE() {
-        FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
-        // FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+        //FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
+         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(3000);
         TestUtil.click(PaymentProof, "PaymentProof pdf uploaded");
         TestUtil.click(done, "Clicked on ok button");
