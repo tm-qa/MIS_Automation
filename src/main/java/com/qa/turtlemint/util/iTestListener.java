@@ -43,6 +43,11 @@ public class iTestListener extends TestBase implements ITestListener
     public void onTestSkipped(ITestResult Result)
     {
         System.out.println("The name of the testcase Skipped is :"+Result.getName());
+        try {
+            TestUtil.getFullPageScreenShot();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
