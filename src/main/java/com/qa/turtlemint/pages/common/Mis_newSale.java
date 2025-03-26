@@ -98,7 +98,10 @@ public class Mis_newSale extends TestBase {
         WebCommands.staticSleep(2000);
         TestUtil.click(productPI, " policy catagory clicked");
         WebCommands.staticSleep(2000);
-        WebElement PC = driver.findElement(By.xpath("(//md-option[@value='" + TW_FW_LIFE_HEALTH + "'])[2]"));
+      //  WebElement PC = driver.findElement(By.xpath("(//md-option[@value='" + TW_FW_LIFE_HEALTH + "'])[2]"));
+
+        WebElement PC = driver.findElement(By.xpath("//md-option[@data-auto=\"$$vertical-"+TW_FW_LIFE_HEALTH+"FW-select\"]"));
+
         WebCommands.staticSleep(2000);
         TestUtil.click(PC, TW_FW_LIFE_HEALTH + " policy catagory selected");
 
