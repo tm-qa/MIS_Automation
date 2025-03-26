@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.io.IOException;
+
 public class junk extends TestBase {
 
     public junk() {
@@ -64,7 +66,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "(//a[@data-auto=\"mis-module\"])[2]")
     WebElement MIS;
 
-    @FindBy(xpath = "//span[text()='mr automation test']//..//..")
+    @FindBy(xpath = "//span[text()='mr automation']//..//..")
     WebElement policyselectAutomation;
 
     @FindBy(xpath = "//*[@id=\"Motor_status\"]//..//following-sibling::span")
@@ -97,11 +99,11 @@ public class junk extends TestBase {
         System.out.println("Policy " + misID + " Successfully junked");
     }
 
-    public void JunkPolicyBI(String misID, String tw_fw) {
+    public void JunkPolicyBI(String misID, String tw_fw) throws IOException {
 
 
-        // driver.get(System.getProperty("ninjaurl"));
-        driver.get(prop.getProperty("ninjaurl"));
+         driver.get(System.getProperty("ninjaurl"));
+       // driver.get(prop.getProperty("ninjaurl"));
 
         TestUtil.click(MIS, "MIS Selected");
         TestUtil.sendKeys(search, misID, "search policy entered");
@@ -152,6 +154,7 @@ public class junk extends TestBase {
 
         TestUtil.click(SaveSale, "Save sale clicked");
         WebCommands.staticSleep(2000);
+        TestUtil.getFullPageScreenShot();
         try {
 
         } catch (Exception e) {
