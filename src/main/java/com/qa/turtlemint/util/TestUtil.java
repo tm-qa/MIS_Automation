@@ -73,7 +73,7 @@ public class TestUtil {
     }
 
     public static void click(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
         LogUtils.info(msg);

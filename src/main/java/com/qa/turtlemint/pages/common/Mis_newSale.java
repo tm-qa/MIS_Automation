@@ -113,6 +113,7 @@ public class Mis_newSale extends TestBase {
 
         TestUtil.sendKeys(PolicyNo, TestUtil.generateRandomPolicyNo(7), "Policy Number entered");
         WebCommands.staticSleep(1000);
+        TestUtil.waitElementToBeClickable(Proceed);
 
         TestUtil.click(Proceed, " create Sale clicked");
         WebCommands.staticSleep(3000);
