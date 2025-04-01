@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "BI_flow"})
+@Test(groups = {"Mis_Full", "BI_flow"},retryAnalyzer = RetryAnalyser.class)
 public class BI extends TestBase {
     public LoginPage ninjaloginpage;
     BI_pages bi;
