@@ -179,9 +179,6 @@ public class BI_pages extends TestBase {
     WebElement policyNumber;
 
 
-
-
-
     TestUtil ut = new TestUtil();
 
 
