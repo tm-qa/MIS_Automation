@@ -66,7 +66,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "(//a[@data-auto=\"mis-module\"])[2]")
     WebElement MIS;
 
-    @FindBy(xpath = "//span[text()='mr automation']//..//..")
+    @FindBy(xpath = "//span[contains(text(),'mr automation ')]//..//..")
     WebElement policyselectAutomation;
 
     @FindBy(xpath = "//*[@id=\"Motor_status\"]//..//following-sibling::span")
