@@ -195,7 +195,8 @@ public class BI_pages extends TestBase {
         TestUtil.sendKeys(proposalPhone, "6999912345", "phone no entered");
         TestUtil.sendKeys(proposalEmail, "test@t.com", "Email entered");
         TestUtil.sendKeys(proposalNo, TestUtil.generateRandomPolicyNo(9), "Policy No entered");
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(10000);
+        System.out.println("Policy No entered .....");
         TestUtil.click(issuanceDate, "");
         WebCommands.staticSleep(2000);
         TestUtil.click(todayDate, "Date select today");
@@ -270,6 +271,7 @@ public class BI_pages extends TestBase {
         TestUtil.click(Complete,"Complete");
         TestUtil.click(policyIssuanceStatus,"policyIssuanceStatus");
         TestUtil.click(Issued,"Issued");
+        WebCommands.staticSleep(3000);
         TestUtil.click(policyIssuanceDate,"Issued");
         TestUtil.click(todayDate, "Date select today");
         TestUtil.click(issuanceSubStatus,"");
@@ -283,19 +285,19 @@ public class BI_pages extends TestBase {
 
 
     public void PolicyUploadforBI() {
-       // FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
-         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+   FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policyClicked, "policy pdf uploaded");
         TestUtil.click(done, "Clicked on ok button");
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(8000);
         TestUtil.click(save, "Clicked on save button");
         WebCommands.staticSleep(5000);
         TestUtil.getScreenShot();
     }
 
     public void PolicyUploadforBILIFE() {
-        //FileUpload.sendKeys("/Users/tejasbahadure/Downloads/dog.pdf");
+        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
          FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(3000);
         TestUtil.click(PaymentProof, "PaymentProof pdf uploaded");
