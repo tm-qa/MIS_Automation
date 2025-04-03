@@ -66,7 +66,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "(//a[@data-auto=\"mis-module\"])[2]")
     WebElement MIS;
 
-    @FindBy(xpath = "//span[contains(text(),'mr automation ')]//..//..")
+    @FindBy(xpath = "//span[contains(text(),'mr automation')]//..//..")
     WebElement policyselectAutomation;
 
     @FindBy(xpath = "//*[@id=\"Motor_status\"]//..//following-sibling::span")
@@ -103,7 +103,7 @@ public class junk extends TestBase {
 
 
          driver.get(System.getProperty("ninjaurl"));
-       // driver.get(prop.getProperty("ninjaurl"));
+//       driver.get(prop.getProperty("ninjaurl"));
 
         TestUtil.click(MIS, "MIS Selected");
         TestUtil.sendKeys(search, misID, "search policy entered");
