@@ -72,7 +72,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "//*[@id=\"Motor_status\"]//..//following-sibling::span")
     WebElement motorstatus;
 
-    @FindBy(xpath = "//div[@class=\"ant-typography sc-feUZmu css-96yv9z\"]")
+    @FindBy(xpath = "//div[contains(text(),'MIS_')]")
     public WebElement misId;
 
     public void JunkPolicy(String misID) {
