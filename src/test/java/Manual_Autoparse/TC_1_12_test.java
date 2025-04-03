@@ -6,10 +6,11 @@ import com.qa.turtlemint.pages.common.junk;
 import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.pages.manualautoparse.TC_1_12;
 import com.qa.turtlemint.util.LogUtils;
+import com.qa.turtlemint.util.RetryAnalyser;
 import com.qa.turtlemint.util.TestUtil;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import util.RetryAnalyser;
 
 @Test(groups = {"Mis_Full","TC_1_12_test"})
 public class TC_1_12_test extends TestBase {
@@ -32,7 +33,7 @@ public class TC_1_12_test extends TestBase {
 
     }
 
-    @Test(description = "Motor autoparsing flow")
+    @Test(description = "Motor autoparsing flow", retryAnalyzer = RetryAnalyser.class)
     public void TC1() throws Exception {
 
         create.Motor_productCatagory_Status_insurer("Motor","Issued","Bajaj Allianz","Car");
@@ -44,7 +45,7 @@ public class TC_1_12_test extends TestBase {
 
     }
 
-    @Test(description = "TW autoparsing flow")
+    @Test(description = "TW autoparsing flow",retryAnalyzer = RetryAnalyser.class)
     public void TC3() throws Exception {
         create.Motor_productCatagory_Status_insurer("TW","Issued","HDFC Ergo","TW");
         String misID = junkpolicyl.misId.getAttribute("value");
@@ -54,11 +55,11 @@ public class TC_1_12_test extends TestBase {
         TC.policyDetail();
 
     }
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC5() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","Tata Aig","Car");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
         TC.generalDetails("New","09-12-2024");
         TC.proposerDetails("Mr");
@@ -71,16 +72,16 @@ public class TC_1_12_test extends TestBase {
         junkpolicyl.JunkPolicy(misID);
 
     }
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC6() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","Car");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID);
         TC.generalDetails("Rollover","11-10-2024");
         TC.proposerDetails("Mr");
         TC.vehicleDetails("OD");
-        TC.makeModel();
+        TC.makeModelMotor("Fiat Base 500");
         TC.variant();
         TC.vehicleDetails1();
         TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
@@ -90,30 +91,32 @@ public class TC_1_12_test extends TestBase {
         TC.backArrow.click();
         junkpolicyl.JunkPolicy(misID);
     }
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC7() throws Exception {
 
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","PCV");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID);
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
         TC.vehicleDetails("Comprehensive");
         TC.vehicleDetailsPCV("SCHOOL_BUS","Public");
         TC.makeModelMotor("MAHINDRA INTL FJ 470 20");
-        TC.variant();
+        TC.addVariant(", CC: 1, Seating: 20");
         TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
+        TC.dateEndorsementDtails("23-10-2024","23-10-2025");
         TC.qcDtails("Ready");
         TC.saleDetailsmanual("11-10-2024");
         TC.policyDetailmanual();
         TC.backArrow.click();
         junkpolicyl.JunkPolicy(misID);
     }
+
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC8() throws Exception {
         create.Motor_productCatagory_Status_insurer("Motor","Pending from TM","HDFC Ergo","GCV");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID);
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
@@ -130,16 +133,16 @@ public class TC_1_12_test extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC9() throws Exception {
         create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID);
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
         TC.vehicleDetails("OD");
         TC.makeModel();
-        TC.variant();
+        TC.addVariant("Lithium-Ion 60V 28Ah (1 CC)");
         TC.vehicleDetails1();
         TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
         TC.premiumDetailsTw();
@@ -149,16 +152,16 @@ public class TC_1_12_test extends TestBase {
         TC.backArrow.click();
         junkpolicyl.JunkPolicy(misID);
     }
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TC10() throws Exception {
         create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID = junkpolicyl.misId.getAttribute("value");
+        String misID = junkpolicyl.misId.getText();
         System.out.println(misID);
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
         TC.vehicleDetails("OD");
         TC.makeModel();
-        TC.variant();
+        TC.addVariant("Lithium-Ion 60V 28Ah (1 CC)");
         TC.vehicleDetails1();
         TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
         TC.premiumDetailsTw();
@@ -167,6 +170,12 @@ public class TC_1_12_test extends TestBase {
         TC.policyDetailmanual();
         TC.backArrow.click();
         junkpolicyl.JunkPolicy(misID);
+    }
+
+    @AfterMethod()
+    public void Close() {
+
+       driver.quit();
     }
 
 }
