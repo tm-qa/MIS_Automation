@@ -28,40 +28,41 @@ public class Mis_Dashboard extends TestBase {
         ninjaloginpage = new LoginPage();
         dashborad_page =  new Dashborad_page();
 
+
     }
-    @Test (description = " verify MIS Login")
+    @Test (description = " verify MIS Login",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyMis() throws Exception {
         ninjaloginpage.ninja_MIS();
         TestUtil.getFullPageScreenShot();
     }
 
-    @Test(description = " verify all Dashboard tabs Login")
+    @Test(description = " verify all Dashboard tabs Login",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyDashboardTabs() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.verifyDashboardTabs();
 
     }
-    @Test(description = " verify all Dashboard columns Login")
+    @Test(retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class , description = " verify all Dashboard columns Login")
     public void verifyDashboardColumns() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.verifyDashboardColumns();
     }
-    @Test(description = "verify hamburger")
+    @Test(description = "verify hamburger",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyHamburger() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.hamburger();
     }
-    @Test (description = "verify hamburger modules")
+    @Test (description = "verify hamburger modules",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyHamburgerAndModules() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.hamburgerModules();
     }
-    @Test(description = "verify date range with all filer by combinations")
+    @Test(description = "verify date range with all filer by combinations",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyDateRangeAndFilyerByCombinations() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.VerifydateRangeAndFilterByCombination();
     }
-    @Test(description = "verify date range")
+    @Test(description = "verify date range",retryAnalyzer = com.qa.turtlemint.util.RetryAnalyser.class)
     public void verifyDateRange() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashborad_page.verifyDateRange();
