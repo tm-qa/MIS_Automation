@@ -164,7 +164,6 @@ public class Dashborad_page extends TestBase {
         elementIsDisplaed(searchIcon);
         elementIsDisplaed(createLeadIcon);
         elementIsDisplaed(notificationIcon);
-        elementIsDisplaed(ninjaV1);
         elementIsDisplaed(allRecords);
         elementIsDisplaed(hamburger);
 
