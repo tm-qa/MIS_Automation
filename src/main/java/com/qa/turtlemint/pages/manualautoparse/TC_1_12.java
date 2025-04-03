@@ -86,7 +86,7 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//div[text()=\"Fiat Base 500\"]")
     WebElement fiat_base50;
 
-    @FindBy(xpath = "(//div[@title=\"Lithium-Ion 60V 28Ah (1 CC)\"])")
+    @FindBy(xpath = "(//div[@title=\"Sports (1248 CC)\"])")
     WebElement sports;
 
 
@@ -196,7 +196,7 @@ public class TC_1_12 extends TestBase {
     public void policyDetail() {
 
 //      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+       FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
@@ -209,7 +209,7 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetailmanual() {
 
-//        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//       FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
@@ -347,6 +347,7 @@ public class TC_1_12 extends TestBase {
         WebCommands.staticSleep(2000);
     }
     public void dateEndorsementDtailsod(String riskstart, String riskend) {
+        WebCommands.staticSleep(2000);
         TestUtil.sendKeys(odriskstartdate, riskstart, riskstart + " Sale close date Entered");
         odriskstartdate.sendKeys(Keys.ENTER);
         TestUtil.sendKeys(odriskenddate, riskend, riskend + " Sale close date Entered");

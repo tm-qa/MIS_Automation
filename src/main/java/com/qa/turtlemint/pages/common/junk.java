@@ -51,7 +51,7 @@ public class junk extends TestBase {
     @FindBy(xpath = "//input[@data-auto=\"search-input-nav\"]")
     WebElement policysearch;
 
-    @FindBy(xpath = "//div[@class=\"sc-fHjqPf iFCspv\"]")
+    @FindBy(xpath = "//*[text()=\"Action Reqd\"]")
     public WebElement policyCkicked;
 
     @FindBy(xpath = "//button[@data-auto=\"yes-mis-button\"]")
@@ -75,9 +75,13 @@ public class junk extends TestBase {
     @FindBy(xpath = "//div[contains(text(),'MIS_')]")
     public WebElement misId;
 
+    @FindBy(xpath = "//label[@title=\"Policy Status\"]//..//..//following-sibling::div")
+    WebElement getPolicyStatus;
+
     public void JunkPolicy(String misID) {
         TestUtil.sendKeys(search, misID, "search policy entered");
-        TestUtil.sendKeys(search, String.valueOf(Keys.RETURN), "entered");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(search, Keys.RETURN.toString(), "pressed Enter");
         TestUtil.getScreenShot();
         TestUtil.click(policyCkicked, "clicked on policy");
 
@@ -88,7 +92,7 @@ public class junk extends TestBase {
             TestUtil.click(Edit, "Edit button clicked");
         }
         WebCommands.staticSleep(2000);
-        TestUtil.click(policyStatus, "policy Status clicked");
+        TestUtil.click(getPolicyStatus, "policy Status clicked");
         WebCommands.staticSleep(1000);
         TestUtil.click(junk, "junk selected");
         WebCommands.staticSleep(1000);
