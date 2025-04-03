@@ -3,6 +3,7 @@ package DashBoard;
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.pages.DashBoard.Dashboard_Pagee;
 import com.qa.turtlemint.pages.login.LoginPage;
+import com.qa.turtlemint.util.RetryAnalyser;
 import com.qa.turtlemint.util.iTestListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,25 +26,24 @@ public class Dashboard extends TestBase {
         ninjaloginpage = new LoginPage();
         dashboardPage = new Dashboard_Pagee();
     }
-    @Test
-
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TestCase153() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusResetEnable();
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
 
     public void TestCase154and155and156() throws Exception{
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCallStatusFilterFunctionality();
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
 
     public void TestCase160() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
 
     public void TestCase161() throws Exception {
         ninjaloginpage.ninja_MIS();
@@ -56,12 +56,12 @@ public class Dashboard extends TestBase {
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void TestCase163and164and165() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyNinjaV1();
     }
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
 
     public void TestCase168() throws Exception {
         ninjaloginpage.ninja_MIS();
