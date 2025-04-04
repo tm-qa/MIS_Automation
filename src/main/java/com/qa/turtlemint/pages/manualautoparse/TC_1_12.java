@@ -2,6 +2,9 @@ package com.qa.turtlemint.pages.manualautoparse;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
+import com.qa.turtlemint.pages.common.Mis_newSale;
+import com.qa.turtlemint.pages.common.junk;
+import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.util.TestUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.Locale;
 
@@ -137,6 +141,10 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//p[text()=\"Warning! Duplicate Policy Detected\"]")
     public WebElement warning;
 
+    @FindBy(xpath = "//label[@title ='Channel Type']//parent::div//following-sibling::div")
+    WebElement ChannelType;
+    @FindBy(xpath = "//div[text()='Website']")
+    WebElement website;
 
 
     public TC_1_12() {
@@ -186,6 +194,18 @@ public class TC_1_12 extends TestBase {
 
     }
     public void saleDetailsmanual(String salecloseDate) {
+
+        TestUtil.click(ChannelType, " Channel Type selected");
+        TestUtil.click(website, " website selected from channel type dropdown");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
+        saleclosedatemanual.sendKeys(Keys.ENTER);
+        TestUtil.getScreenShot();
+
+    }
+
+    public void saleDetailsmanualRenewals(String salecloseDate) {
+
         WebCommands.staticSleep(2000);
         TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
         saleclosedatemanual.sendKeys(Keys.ENTER);
@@ -195,7 +215,7 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetail() {
 
-//      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//     FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
@@ -209,7 +229,7 @@ public class TC_1_12 extends TestBase {
 
     public void policyDetailmanual() {
 
-//       FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
         FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
@@ -248,8 +268,30 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
     }
-    public void vehicleDetails1() {
 
+    public void vehicleDetailsRenewals(String productName , String regiNumber,String makeModel , String variant, String vehiclestype ) {
+        String regN  = TestUtil.getRandomTransactionNo();
+        String registrationNumber  = "MH-03-ZZ-"+regN;
+        TestUtil.click(productNamedrop, " Product name dropdown clicked");
+        WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
+        TestUtil.click(PN, productName + " Procduct name selected");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(vehiclesubtypedrop, vehiclestype, vehiclestype + " Vehicle type selected");
+        vehiclesubtypedrop.sendKeys(Keys.ENTER);
+        TestUtil.sendKeys(regisNumber, regiNumber, "Registration number entered");
+        TestUtil.getScreenShot();
+        WebCommands.staticSleep(2000);
+        makeModelMotor(makeModel);
+        addVariant(variant);
+        TestUtil.sendKeys(cubiccapacity, "2500"," Cubic capacity entered");
+        TestUtil.sendKeys(fuelType,"Diesel","Diesel fuel type selected");
+        TestUtil.sendKeys(manufactureYear,"2012","2012 manufacturing year selected");
+        TestUtil.sendKeys(engineNum, "10151", "engine number entered");
+        TestUtil.sendKeys(chassisNum, "10151", "chassis number entered");
+        TestUtil.getScreenShot();
+        WebCommands.staticSleep(2000);
+    }
+    public void vehicleDetails1() {
         TestUtil.sendKeys(cubiccapacity, "2500"," Cubic capacity entered");
         TestUtil.sendKeys(fuelType,"Diesel","Diesel fuel type selected");
         TestUtil.sendKeys(manufactureYear,"2012","2012 manufacturing year selected");
