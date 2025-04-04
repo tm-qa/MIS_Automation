@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import javax.enterprise.inject.New;
 
-@Test(groups = {"Mis_Full","TC_1_12_test"})
+@Test(groups = {"Mis_Full","TC_1_12_test","Mis_Roll"})
 public class Renewal_Rollover extends TestBase {
 
 
