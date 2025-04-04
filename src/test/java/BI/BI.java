@@ -33,25 +33,22 @@ public class BI extends TestBase {
     }
 
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-TW Flow  - HDFC ergo")
     public void TC_01() throws Exception {
         ninjaloginpage.ninja_PI();
         flow.PI_productCatagory_Status_insurer("TW", "HDFC ergo");
-
         bi.PolicyCreateForBI("TW");
         String policyid = id.policyID.getText();
         System.out.println("*****************    " + policyid + "     *******************");
         bi.PolicyUploadforBI();
-
         id.policyid(policyid);
-
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
         id.JunkPolicyBI(misID,"TW");
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-TW  - Autoparse Flow  - Bajaj")
     public void TC_02() throws Exception {
         ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
@@ -70,7 +67,7 @@ public class BI extends TestBase {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-FW Flow  - L&T")
     public void TC_03() throws Exception {
         ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
@@ -83,7 +80,7 @@ public class BI extends TestBase {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-FW Flow  - HDFC Ergo Health")
     public void TC_04() throws Exception {
         ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
@@ -95,7 +92,7 @@ public class BI extends TestBase {
         id.JunkPolicyBI(misID,"FW");
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "Life Flow  - HDFC Ergo Health")
     public void TC_05_12() throws Exception {
         ninjaloginpage.ninja_PI();
         //ninjaloginpage.ninja_MIS();
@@ -108,7 +105,7 @@ public class BI extends TestBase {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "TW Flow  - NAVI")
     public void TC_06() throws Exception {
         ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
@@ -127,7 +124,7 @@ public class BI extends TestBase {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "FW Flow  - NAVI")
     public void TC_07() throws Exception {
         // ninjaloginpage.ninja_MIS();
         ninjaloginpage.ninja_PI();
@@ -140,17 +137,19 @@ public class BI extends TestBase {
 
     }
 
-//    @Test(retryAnalyzer = RetryAnalyser.class)
+//    @Test()
 //    public void TC_08() throws Exception {
-//        // ninjaloginpage.ninja_MIS();
-//     //   flow.PI_productCatagory_HealtLife("HEALTH", "Liberty");
-//      //  bi.PolicyCreateForBI_LIfe();
+//        ninjaloginpage.ninja_PI();
+//        flow.PI_productCatagory_HealtLife("HEALTH", "Liberty");
+//        bi.PolicyCreateForHealth();
 //
 //    }
 
 
-    @AfterMethod()
-    public void Close() {
-           driver.quit();
-    }
+        @AfterMethod()
+        public void Close() {
+
+
+        }
+
 }
