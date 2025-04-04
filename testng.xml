@@ -29,6 +29,7 @@
             <class name="DashBoard.Dashboard"></class>
             <class name="BI.BI"></class>
             <class name="CI.CI_Test"></class>
+            <class name="Renewals_Rollover.Renewal_Rollover"></class>
 
         </classes>
 
