@@ -2,23 +2,21 @@ package com.qa.turtlemint.pages.manualautoparse;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
-import com.qa.turtlemint.pages.common.Mis_newSale;
-import com.qa.turtlemint.pages.common.junk;
-import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.util.TestUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.util.Locale;
+import java.time.Duration;
 
-public class TC_1_12 extends TestBase {
+public class Health_Life_Page extends TestBase {
 
     @FindBy(xpath = "//input[@id=\"AutoParsing_channelType\"]//parent::span")
     WebElement channeltype;
@@ -42,13 +40,13 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//input[@id=\"Motor_manualQCStatus\"]")
     WebElement dataQC;
 
-    @FindBy(xpath = "//input[@id=\"Motor_proposer.title\"]")
+    @FindBy(xpath = "//input[@id=\"Health_proposer.title\"]//parent::span//parent::div")
     WebElement proposertitle;
     @FindBy(xpath = "//input[@name=\"proposer.fName\"]")
     WebElement customerFname;
     @FindBy(xpath = "//input[@name=\"proposer.lName\"]")
     WebElement customerLname;
-    @FindBy(xpath = "//input[@id=\"Motor_proposer.mobileNotAvailable\"]//parent::span")
+    @FindBy(xpath = "//input[@id=\"Health_proposer.mobileNotAvailable\"]//parent::span")
     WebElement custMnoNA;
     @FindBy(xpath = "//input[@name=\"proposer.email\"]")
     WebElement custEmail;
@@ -160,11 +158,28 @@ public class TC_1_12 extends TestBase {
     @FindBy(id = "Health_issuanceDate")
     WebElement healthIssuanceDate;
 
+    @FindBy(xpath = "//*[@data-icon=\"plus-circle\"]")
+    WebElement addMemberButton;
 
-    public TC_1_12() {
+    @FindBy(xpath = "(//div[@class=\"ant-modal-body\"]//input[1]//parent::span)[1]")
+    WebElement addSelf;
+
+    @FindBy(xpath = "//button[text()=\"Add\"]")
+    WebElement getAddMemberButton;
+
+
+    public Health_Life_Page() {
         PageFactory.initElements(driver, this);
     }
 
+    public void addMember(){
+        TestUtil.click(addMemberButton , "click on add member");
+        WebCommands.staticSleep(2000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        TestUtil.click(addSelf,"jhagef");
+
+        TestUtil.click(getAddMemberButton, " click on add member");
+    }
     public void basicDetails(String channelType, String bussinessType, String issuanceDate) {
 
         TestUtil.click(tmbrokercodecheckboxauto, "Check box selected");
@@ -182,23 +197,6 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
 
-    }
-
-
-    public void generalDetails(String bussinessType, String issuanceDate) {
-
-
-        TestUtil.click(tmbrokercodecheckboxmanual, "Check box selected");
-        TestUtil.sendKeys(policynumber, TestUtil.generateRandomPolicyNo(8), "policy number entered");
-
-        TestUtil.click(bussinesstypemanual, " Business type dropdown clicked");
-        WebElement BT = driver.findElement(By.xpath("//div[@title='" + bussinessType + "']"));
-        TestUtil.click(BT, bussinessType + " Business type selected");
-
-        TestUtil.sendKeys(PIdatemanual, issuanceDate, issuanceDate + " Issuance date Entered");
-        PIdatemanual.sendKeys(Keys.ENTER);
-        TestUtil.getScreenShot();
-        WebCommands.staticSleep(2000);
     }
 
 
@@ -248,7 +246,7 @@ public class TC_1_12 extends TestBase {
     public void policyDetail() {
 
 //     FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-       FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
@@ -259,23 +257,22 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
     }
 
-    public void policyDetailmanual() throws IOException {
+    public void policyDetailmanual() {
 
-//      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
         WebCommands.staticSleep(2000);
         TestUtil.click(savebuttonmanual, "Clicked on save button");
-        TestUtil.getFullPageScreenShot();
         WebCommands.staticSleep(2000);
         TestUtil.getScreenShot();
     }
     public void policyDetailmanualSecond() {
 
-//        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-       FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+//        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
@@ -365,7 +362,7 @@ public class TC_1_12 extends TestBase {
     }
     public void premiumDetails() {
         TestUtil.sendKeys(totalodpremium, "2500"," Total OD premium entered");
-       TestUtil.sendKeys(totaltppremium,"2500","Total tp premium entered");
+        TestUtil.sendKeys(totaltppremium,"2500","Total tp premium entered");
         TestUtil.sendKeys(netpremium,"2012","Net premium entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
@@ -467,6 +464,5 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(DQ, DataQC + " Data QC selected");
         TestUtil.getScreenShot();
     }
-
 
 }
