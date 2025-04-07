@@ -60,8 +60,11 @@ public class Mis_newSale extends TestBase {
     @FindBy(xpath = "//md-option[@data-auto=\"policyIssuanceStatus-ISSUED-select\"]")
     WebElement issued;
 
+    @FindBy(xpath = "//input[@id=\"Health_turtlemintBrokerCode\"]//parent::span")
+    WebElement healthTurtleBrokerCode ;
 
-    public void productCatagory_Status_insurer(String TW_Motor_Health_Life, String status, String insurer) {
+
+    public void productCatagory_Status_insurer(String TW_Motor_Health_Life, String status, String insurer, String vehicleT) {
         TestUtil.click(plus, "Plus button clicked");
         TestUtil.click(policyCatagory, " policy catagory clicked");
         WebElement PC = driver.findElement(By.xpath("//div[@title='" + TW_Motor_Health_Life + "']"));
@@ -75,19 +78,29 @@ public class Mis_newSale extends TestBase {
         TestUtil.sendKeys(insurerp, insurer, " insurer select clicked");
         WebCommands.staticSleep(2000);
         TestUtil.sendKeys(insurerp, String.valueOf(Keys.ENTER), insurer + "  - insurer selected ");
+//
+//        TestUtil.click(vehicleType , "click on vehicle type");
+//        WebElement vehicleTypeS = driver.findElement(By.xpath("//div[text()='" + vehicleT + "']"));
+//        TestUtil.click(vehicleTypeS , "select vehicle Type");
+//        TestUtil.click(createSale, " create Sale clicked");
 
-
-        TestUtil.click(createSale, " create Sale clicked");
+        System.out.println("hgsdfh");
     }
 
     public void Motor_productCatagory_Status_insurer(String TW_Motor_Health_Life, String status, String insurer, String vehicalType) {
-        productCatagory_Status_insurer(TW_Motor_Health_Life, status, insurer);
+        productCatagory_Status_insurer(TW_Motor_Health_Life, status, insurer , vehicalType);
 
         TestUtil.click(vehicleType, " insurer select clicked");
         WebElement VT = driver.findElement(By.xpath("//div[@id=\"createMISEntry_vehicleType_list\"]/..//div[@title='" + vehicalType + "']"));
         TestUtil.click(VT, vehicalType + " VT selected");
-
         TestUtil.click(createSale, " create Sale clicked");
+    }
+
+    public void Motor_productCatagory_Health(String TW_Motor_Health_Life, String status, String insurer, String vehicalType) {
+        productCatagory_Status_insurer(TW_Motor_Health_Life, status, insurer , vehicalType);
+        WebCommands.staticSleep(2000);
+        TestUtil.click(createSale, " create Sale clicked");
+
     }
 
 
