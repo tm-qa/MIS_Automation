@@ -83,6 +83,7 @@ public class junk extends TestBase {
         WebCommands.staticSleep(2000);
         TestUtil.sendKeys(search, Keys.RETURN.toString(), "pressed Enter");
         TestUtil.getScreenShot();
+        WebCommands.staticSleep(2000);
         TestUtil.click(policyCkicked, "clicked on policy");
 
         try {
@@ -107,7 +108,7 @@ public class junk extends TestBase {
 
 
          driver.get(System.getProperty("ninjaurl"));
-//       driver.get(prop.getProperty("ninjaurl"));
+//      driver.get(prop.getProperty("ninjaurl"));
 
         TestUtil.click(MIS, "MIS Selected");
         TestUtil.sendKeys(search, misID, "search policy entered");
