@@ -9,7 +9,9 @@ import com.qa.turtlemint.pages.login.LoginPage;
 import com.qa.turtlemint.pages.manualautoparse.Health_Life_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_09_TO_21_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_1_12;
+import com.qa.turtlemint.util.RetryAnalyser;
 import com.qa.turtlemint.util.TestUtil;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -40,7 +42,7 @@ public class Renewal_Rollover extends TestBase {
 
     }
 
-    @Test(description = "Renewals_TW")
+    @Test(description = "Renewals_FW",retryAnalyzer = RetryAnalyser.class)
     public void Renewals_FW() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
@@ -80,7 +82,7 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "Renewals_TW")
+    @Test(description = "Renewals_TW",retryAnalyzer = RetryAnalyser.class)
     public void Renewals_TW() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","L&T","TW");
@@ -119,7 +121,7 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "Renewals_TW")
+    @Test(description = "Rollover_TW",retryAnalyzer = RetryAnalyser.class)
     public void Rollover_TW() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","L&T","TW");
@@ -158,7 +160,7 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "Renewals_TW")
+    @Test(description = "Rollover_FW",retryAnalyzer = RetryAnalyser.class)
     public void Rollover_FW() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
@@ -197,7 +199,7 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "Renewals_TW")
+    @Test(description = "_Health",retryAnalyzer = RetryAnalyser.class)
     public void _Health() throws Exception {
 //        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
@@ -233,6 +235,12 @@ public class Renewal_Rollover extends TestBase {
 //        junkpolicyl.JunkPolicy(misID1);
 //        TC.backArrow.click();
 //        junkpolicyl.JunkPolicy(misID);
+    }
+
+    @AfterMethod()
+    public void Close() {
+
+        driver.quit();
     }
 
 
