@@ -50,7 +50,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-2511" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1131" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
 
         WebCommands.staticSleep(4000);
@@ -67,7 +67,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID1+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-2511" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1131" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -240,7 +240,7 @@ public class Renewal_Rollover extends TestBase {
     @AfterMethod()
     public void Close() {
 
-     driver.quit();
+    driver.quit();
     }
 
 
