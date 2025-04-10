@@ -50,7 +50,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-2511" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
 
         WebCommands.staticSleep(4000);
@@ -67,7 +67,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID1+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-2511" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -90,7 +90,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-4411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -106,7 +106,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID1+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-4411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -129,7 +129,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1310" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1910" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -145,7 +145,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID1+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1911" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("08-10-2024");
@@ -168,7 +168,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1310" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1320" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -184,7 +184,7 @@ public class Renewal_Rollover extends TestBase {
         System.out.println(misID1+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fiat Base 500","Sports (1248 CC)" , "Car");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1321" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("08-10-2024");
@@ -240,7 +240,7 @@ public class Renewal_Rollover extends TestBase {
     @AfterMethod()
     public void Close() {
 
-        driver.quit();
+     driver.quit();
     }
 
 
