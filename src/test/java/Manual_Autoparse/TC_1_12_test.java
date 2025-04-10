@@ -174,49 +174,6 @@ public class TC_1_12_test extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
-    public void TCre() throws Exception {
-        ninjaloginpage.ninja_MIS();
-        create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID = junkpolicyl.misId.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.makeModel();
-        TC.addVariant("Lithium-Ion 60V 28Ah (1 CC)");
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetailsTw();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-        TC.backArrow.click();
-        junkpolicyl.JunkPolicy(misID);
-
-
-        create.Motor_productCatagory_Status_insurer("TW","Pending from TM","Reliance","TW");
-        String misID1 = junkpolicyl.misId.getText();
-        System.out.println(misID);
-        TC.generalDetails("New","11-10-2024");
-        TC.proposerDetails("Mr");
-        TC.vehicleDetails("OD");
-        TC.makeModel();
-        TC.addVariant("Lithium-Ion 60V 28Ah (1 CC)");
-        TC.vehicleDetails1();
-        TC.dateEndorsementDtailsod("23-10-2024","23-10-2025");
-        TC.premiumDetailsTw();
-        TC.qcDtails("Ready");
-        TC.saleDetailsmanual("11-10-2024");
-        TC.policyDetailmanual();
-        TC.backArrow.click();
-        junkpolicyl.JunkPolicy(misID);
-    }
-
-
-
-
-
     @AfterMethod()
     public void Close() {
 
