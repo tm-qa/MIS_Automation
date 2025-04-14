@@ -37,14 +37,14 @@ public class Renewal_Rollover extends TestBase {
         create = new Mis_newSale();
         TC = new TC_1_12();
         tc_09_to_21_page = new TC_09_TO_21_Page();
-        ninjaloginpage.ninja_MIS();
+//        ninjaloginpage.ninja_MIS();
         health_life_page = new Health_Life_Page();
 
     }
 
     @Test(description = "Renewals_FW",retryAnalyzer = RetryAnalyser.class)
     public void Renewals_FW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+       ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -52,7 +52,6 @@ public class Renewal_Rollover extends TestBase {
         TC.proposerDetails("Mr");
         TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1131" , "Fiat Base 500","Sports (1248 CC)" , "Car");
 //        TC.vehicleDetails1();
-
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
         WebCommands.staticSleep(2000);
@@ -84,7 +83,7 @@ public class Renewal_Rollover extends TestBase {
 
     @Test(description = "Renewals_TW",retryAnalyzer = RetryAnalyser.class)
     public void Renewals_TW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","L&T","TW");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -123,7 +122,7 @@ public class Renewal_Rollover extends TestBase {
 
     @Test(description = "Rollover_TW",retryAnalyzer = RetryAnalyser.class)
     public void Rollover_TW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","L&T","TW");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -162,7 +161,7 @@ public class Renewal_Rollover extends TestBase {
 
     @Test(description = "Rollover_FW",retryAnalyzer = RetryAnalyser.class)
     public void Rollover_FW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -201,7 +200,7 @@ public class Renewal_Rollover extends TestBase {
 
     @Test(description = "_Health",retryAnalyzer = RetryAnalyser.class)
     public void _Health() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
