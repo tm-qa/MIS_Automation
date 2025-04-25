@@ -271,9 +271,9 @@ public class mislogic extends TestBase {
         TestUtil.sendKeys(mobile, "6999912345", "mobile entered");
         TestUtil.sendKeys(email, "test@test.com", "email entered");
         TestUtil.sendKeys(address, "test adress", "address entered");
-        TestUtil.sendKeys(Pincode, "400011", "address entered");
-        TestUtil.sendKeys(currentAddress, "current adress", "address entered");
-        TestUtil.sendKeys(CurrentPincode, "400011", "address entered");
+        TestUtil.sendKeys(Pincode, "400011", "Pincode entered");
+        TestUtil.sendKeys(currentAddress, "current adress", "current Address entered");
+        TestUtil.sendKeys(CurrentPincode, "400011", "Current Pincode entered");
         TestUtil.click(paymentFrequency, "");
         TestUtil.click(Monthly, "Monthly selected");
         TestUtil.sendKeys(PaymentTerminyears, String.valueOf(PPT), "Payment Term in years 4");
