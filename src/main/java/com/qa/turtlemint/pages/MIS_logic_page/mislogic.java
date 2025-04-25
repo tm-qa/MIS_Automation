@@ -311,12 +311,11 @@ public class mislogic extends TestBase {
       //  js.executeScript("arguments[0].click();", Life_manualQCStatuss);
         TestUtil.click(Ready, "Ready select");
         TestUtil.click(Save, "Save select");
+        TestUtil.click(PaymentSchedule, "Payment Schedule Clicked");
 
     }
 
     public void verify(String rsikStartdate) throws IOException {
-        TestUtil.click(PaymentSchedule, "Payment Schedule Clicked");
-     //   System.out.println(" ****************** MIS ID "+ MisID.getAttribute("value")+ "  ****************");
         Assert.assertEquals(PaymentFrequency.getText(),"MONTHLY");
         Assert.assertEquals(PremiumPaymentTerminyears.getAttribute("value"),"4");
         Assert.assertEquals(PolicytermTerminyears.getAttribute("value"),"4");
