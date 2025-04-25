@@ -31,6 +31,7 @@
             <class name="CI.CI_Test"></class>
             <class name="Renewals_Rollover.Renewal_Rollover"></class>
             <class name="MIS_Logic.TC_14to_23"></class>
+            <class name="Potential_Duplicate.Potential_Duplicate"></class>
 
         </classes>
 
