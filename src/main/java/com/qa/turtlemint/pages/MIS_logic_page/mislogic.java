@@ -316,7 +316,7 @@ public class mislogic extends TestBase {
 
     public void verify(String rsikStartdate) throws IOException {
         TestUtil.click(PaymentSchedule, "Payment Schedule Clicked");
-        System.out.println(" ****************** MIS ID "+ MisID.getAttribute("value")+ "  ****************");
+     //   System.out.println(" ****************** MIS ID "+ MisID.getAttribute("value")+ "  ****************");
         Assert.assertEquals(PaymentFrequency.getText(),"MONTHLY");
         Assert.assertEquals(PremiumPaymentTerminyears.getAttribute("value"),"4");
         Assert.assertEquals(PolicytermTerminyears.getAttribute("value"),"4");
