@@ -55,10 +55,9 @@ public class TC_14to_23 extends TestBase {
     public void TC_15() throws Exception {
         ninjaloginpage.ninja_MIS();
         flow.Motor_productCatagory_Health("Life", "Issued", "Bajaj", "");
+        String misID = logic.MisID.getAttribute("value");
         logic.PolicyDetails("10-10-2019", "10-10-2022");
         logic.PolicyHolderDetails("10-10-1994",4,9,"Limited Pay");
-
-        String misID = logic.MisID.getAttribute("value");
         System.out.println("**********************************    " + misID + "     *********************************");
         id.JunkPolicyBI(misID,"life");
 
@@ -67,7 +66,7 @@ public class TC_14to_23 extends TestBase {
     @AfterMethod()
     public void Close() {
 
-        driver.quit();
+      //  driver.quit();
 
     }
 
