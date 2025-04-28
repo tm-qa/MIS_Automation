@@ -67,6 +67,7 @@ public class TC_14to_23 extends TestBase {
     @AfterMethod()
     public void Close() {
 
+        driver.quit();
 
     }
 
