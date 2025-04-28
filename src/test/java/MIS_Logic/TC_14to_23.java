@@ -36,7 +36,7 @@ public class TC_14to_23 extends TestBase {
     }
 
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "Verify Details populated for Payment schedule when case status is issued. ****AND*** Verify if First installment has Due Date = RIsk start date for payment schedule.****AND*** Verify for Life if Net premium autopopulates when Modal Premium (without GST)  and payment frequency are entered.****AND*** Verify for Life if  Service Tax / GST autopopulates when Modal GST and payment frequency are entered.")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "*** TC_13_14_16_17_18_19 ***Verify Details populated for Payment schedule when case status is issued. ****AND*** Verify if First installment has Due Date = RIsk start date for payment schedule.****AND*** Verify for Life if Net premium autopopulates when Modal Premium (without GST)  and payment frequency are entered.****AND*** Verify for Life if  Service Tax / GST autopopulates when Modal GST and payment frequency are entered.")
     public void TC_13_14_16_17_18_19() throws Exception {
         ninjaloginpage.ninja_MIS();
         flow.Motor_productCatagory_Health("Life", "Issued", "Bajaj", "");
@@ -51,7 +51,7 @@ public class TC_14to_23 extends TestBase {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "if PT > PPT than Payment Type then limited pay.")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "***TC 15 ***  if PT > PPT than Payment Type then limited pay.")
     public void TC_15() throws Exception {
         ninjaloginpage.ninja_MIS();
         flow.Motor_productCatagory_Health("Life", "Issued", "Bajaj", "");
