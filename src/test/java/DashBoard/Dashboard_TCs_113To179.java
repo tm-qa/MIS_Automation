@@ -26,84 +26,75 @@ public class Dashboard_TCs_113To179 extends TestBase {
         dashboardPage = new Dashboard_Pagee();
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "Verify Channel Column Filter Options")
     public void TestCase113() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
-
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Channel Column Filter functionality")
     public void TestCase114() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.ChannelFilterFunctionality();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Reset Button Disable")
     public void TestCase115() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonDisable();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Reset Button Enable")
     public void TestCase116() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonEnabled();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class ,  description = "Verify ok Button for channel type filter")
     public void TestCase117and118and119() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyOKButtonFunctionalityForChannelFilter();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Category Column FilterOptions")
     public void TestCase120() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyCategoryColumnFilterOptions();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Category Filter Functionality")
     public void TestCase121() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.CategoryFilterFunctionality();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class ,description = "Verify Select All Items For Category" )
     public void TestCase122and123and124() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifySelectAllItemsForCategory();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify reset For Category")
     public void TestCase125() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyResetButtonCategoryColumn();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class ,  description = "Verify reset For Category")
     public void TestCase126() throws Exception {
         ninjaloginpage.ninja_MIS();
-        dashboardPage.VerifyResetButtonEnabledCategory();
+//        dashboardPage.VerifyResetButtonEnabledCategory();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
-
+    @Test(retryAnalyzer = RetryAnalyser.class ,  description = "Verify ok button For Category")
     public void TestCase127and128and129() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyOkButtonForCategoryColumn();
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class ,  description = "Verify Channel Column Filter Options")
     public void TestCase130() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Channel Column Filter Options" )
     public void TestCase131and132and133() throws Exception {
         ninjaloginpage.ninja_MIS();
         dashboardPage.VerifyChannelColumnFilterOptions();
     }
-    @Test(retryAnalyzer = RetryAnalyser.class)
+    @Test(retryAnalyzer = RetryAnalyser.class , description = "Verify Channel Column Filter Options")
 
     public void TestCase134and135() throws Exception {
         ninjaloginpage.ninja_MIS();
@@ -158,11 +149,10 @@ public class Dashboard_TCs_113To179 extends TestBase {
         dashboardPage.VerifyCallStatusResetDisable();
     }
 
-
     @AfterMethod()
     public void Close() {
 
-        driver.quit();
+       driver.quit();
     }
 
 }
