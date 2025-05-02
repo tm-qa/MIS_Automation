@@ -211,7 +211,7 @@ public class TestUtil {
 
     public static String PresentDate() {
         LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return dateTimeFormatter.format(currentDateTime);
 
     }

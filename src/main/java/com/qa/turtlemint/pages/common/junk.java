@@ -168,7 +168,8 @@ public class junk extends TestBase {
         }
         WebCommands.staticSleep(2000);
         Assert.assertEquals(junkassert.getText(), "Junk");
-        System.out.println("********************Policy--- " + misID + "    ************** Successfully junked");
+        System.out.println("********************  Policy --- " + misID + "    ************** Successfully junked");
+        TestUtil.getFullPageScreenShot();
     }
 
     public void policyid(String policyid) {
