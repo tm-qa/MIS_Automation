@@ -96,7 +96,7 @@ public class TC_1_12 extends TestBase {
     WebElement sports;
 
 
-    @FindBy(xpath = "//input[@id=\"Motor_policyRisk.variant\"]")
+    @FindBy(xpath = "//input[@id=\"Motor_policyRisk.variant\"]//parent::span//parent::span")
     WebElement variantdrop;
     @FindBy(xpath = "//input[@id=\"cubicCapacity\"]")
     WebElement cubiccapacity;
@@ -190,7 +190,6 @@ public class TC_1_12 extends TestBase {
 
         TestUtil.click(tmbrokercodecheckboxmanual, "Check box selected");
         TestUtil.sendKeys(policynumber, TestUtil.generateRandomPolicyNo(8), "policy number entered");
-
         TestUtil.click(bussinesstypemanual, " Business type dropdown clicked");
         WebElement BT = driver.findElement(By.xpath("//div[@title='" + bussinessType + "']"));
         TestUtil.click(BT, bussinessType + " Business type selected");
@@ -281,7 +280,7 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(okbutton, "Clicked on ok button");
         WebCommands.staticSleep(2000);
         TestUtil.click(savebuttonmanual, "Clicked on save button");
-        WebCommands.staticSleep(2000);
+        WebCommands.staticSleep(4000);
         TestUtil.getScreenShot();
         TestUtil.click(dublocatePopup , "click on close");
     }
@@ -315,7 +314,7 @@ public class TC_1_12 extends TestBase {
         WebCommands.staticSleep(2000);
     }
 
-    public void vehicleDetailsRenewals(String productName , String regiNumber,String makeModel , String variant, String vehiclestype ) {
+    public void vehicleDetailsRenewals(String productName , String regiNumber,String makeModel , String variant, String vehiclestype ) throws InterruptedException {
         String regN  = TestUtil.getRandomTransactionNo();
         String registrationNumber  = "MH-03-ZZ-"+regN;
         TestUtil.click(productNamedrop, " Product name dropdown clicked");
@@ -332,8 +331,8 @@ public class TC_1_12 extends TestBase {
         TestUtil.sendKeys(cubiccapacity, "2500"," Cubic capacity entered");
         TestUtil.sendKeys(fuelType,"Diesel","Diesel fuel type selected");
         TestUtil.sendKeys(manufactureYear,"2012","2012 manufacturing year selected");
-        TestUtil.sendKeys(engineNum, "14100", "engine number entered");
-        TestUtil.sendKeys(chassisNum, "14100", "chassis number entered");
+        TestUtil.sendKeys(engineNum, "14101", "engine number entered");
+        TestUtil.sendKeys(chassisNum, "14101", "chassis number entered");
         TestUtil.getScreenShot();
 
         if(vehiclestype=="Scooter"){
@@ -418,7 +417,8 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(sports,"variant selected");
         TestUtil.getScreenShot();
     }
-    public void addVariant(String variant){
+    public void addVariant(String variant) throws InterruptedException {
+        Thread.sleep(2000);
         TestUtil.click(variantdrop , "click on varient dp");
         WebElement getVariant = driver.findElement(By.xpath("//div[@title= '"+ variant +"' ]"));
         System.out.println( getVariant);
