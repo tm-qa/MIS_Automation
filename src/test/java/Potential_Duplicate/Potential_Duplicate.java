@@ -34,7 +34,7 @@ public class Potential_Duplicate extends TestBase {
         create = new Mis_newSale();
         TC = new TC_1_12();
         tc_09_to_21_page = new TC_09_TO_21_Page();
-        ninjaloginpage.ninja_MIS();
+//        ninjaloginpage.ninja_MIS();
         health_life_page = new Health_Life_Page();
         potentialDuplicate_page = new PotentialDuplicate_Page();
 
@@ -42,7 +42,7 @@ public class Potential_Duplicate extends TestBase {
 
     @Test(description = "PotentialDuplicate_FW",retryAnalyzer = RetryAnalyser.class)
     public void PotentialDuplicate_FW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+       ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -83,13 +83,13 @@ public class Potential_Duplicate extends TestBase {
 
     @Test(description = "PotentialDuplicate_TW",retryAnalyzer = RetryAnalyser.class)
     public void PotentialDuplicate_TW() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("TW","Issued","L&T","TW");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
         TC.generalDetails("New","11-10-2024");
         TC.proposerDetails("Mr");
-        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AB-4411" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
+        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AB-4511" , "Fidato Easy Go","Lithium-Ion 60V 28Ah (1 CC)" , "Scooter");
 //        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanual("11-10-2024");
@@ -121,45 +121,47 @@ public class Potential_Duplicate extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-
-
-    @Test(description = "_Health")
-    public void _Health() throws Exception {
-//        ninjaloginpage.ninja_MIS();
+    @Test(description = "Health potential duplicate",retryAnalyzer = RetryAnalyser.class)
+    public void Health_Potential() throws Exception {
+        ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
         health_life_page.generalDetailsHealth("New","11-10-2024");
         health_life_page.proposerDetails("Mr");
         health_life_page.addMember();
-        WebCommands.staticSleep(4000);
-//        TC.saleDetailsmanual("11-10-2024");
-//        WebCommands.staticSleep(2000);
-//        TC.dateEndorsementDtails("20-10-2024","10-11-2024");
-//        tc_09_to_21_page.PremiumDetails();
-//        TC.qcDtails("Ready");
-//        WebCommands.staticSleep(2000);
-//        TC.policyDetailmanual();
-//        TC.backArrow.click();
-//        create.Motor_productCatagory_Status_insurer("Health","Issued","ONE_ASSIST","Car");
-//        String misID1 = junkpolicyl.misId.getText();
-//        System.out.println(misID1+"test");
-//        TC.generalDetails("New","11-10-2024");
-//        TC.proposerDetails("Mr");
-//        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fiat Base 500","Sports (1248 CC)" , "Car");
-////        TC.vehicleDetails1();
-//        WebCommands.staticSleep(4000);
-//        TC.saleDetailsmanual("08-10-2024");
-//        WebCommands.staticSleep(2000);
-//        TC.dateEndorsementDtails("09-10-2024","01-10-2025");
-//        tc_09_to_21_page.PremiumDetails();
-//        TC.qcDtails("Ready");
-//        TC.policyDetailmanual();
-//        TC.backArrow.click();
-//        junkpolicyl.JunkPolicy(misID1);
-//        TC.backArrow.click();
-//        junkpolicyl.JunkPolicy(misID);
+        WebCommands.staticSleep(2000);
+        health_life_page.saleDetailsmanual("11-10-2024");
+        WebCommands.staticSleep(2000);
+        health_life_page.dateEndorsementDtails("22-10-2023","22-10-2024");
+        health_life_page.premiumAndayment();
+        health_life_page.policyDetails();
+        health_life_page.qcDtails("Ready");
+        WebCommands.staticSleep(2000);
+        TC.policyDetailmanual();
+        TC.backArrow.click();
+        create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
+        String misID1 = junkpolicyl.misId.getText();
+        System.out.println(misID1+"test");
+        health_life_page.generalDetailsHealth("New","11-10-2024");
+        health_life_page.proposerDetails("Mr");
+        health_life_page.addMember();
+        WebCommands.staticSleep(2000);
+        health_life_page.saleDetailsmanual("11-10-2024");
+        WebCommands.staticSleep(2000);
+        health_life_page.dateEndorsementDtails("19-10-2024","19-10-2025");
+        health_life_page.premiumAndayment();
+        health_life_page.policyDetails();
+        health_life_page.qcDtails("Ready");
+        WebCommands.staticSleep(2000);
+        TC.policyDetailmanual();
+        health_life_page.potentialDuplicate();
+        TC.backArrow.click();
+        junkpolicyl.JunkPolicy(misID1);
+        TC.backArrow.click();
+        junkpolicyl.JunkPolicy(misID);
     }
+
 
     @AfterMethod()
     public void Close() {

@@ -42,9 +42,10 @@ public class Renewal_Rollover extends TestBase {
 
     }
 
-    @Test(description = "Renewals_FW",retryAnalyzer = RetryAnalyser.class)
+    @Test(description = "Renewals_FW")
     public void Renewals_FW() throws Exception {
        ninjaloginpage.ninja_MIS();
+        WebCommands.staticSleep(2000);
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
         String misID = junkpolicyl.misId.getText();
         System.out.println(misID+"test");
@@ -159,7 +160,7 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "Rollover_FW",retryAnalyzer = RetryAnalyser.class)
+    @Test(description = "Rollover_FW")
     public void Rollover_FW() throws Exception {
         ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Status_insurer("Motor","Issued","L&T","Car");
@@ -198,8 +199,8 @@ public class Renewal_Rollover extends TestBase {
         junkpolicyl.JunkPolicy(misID);
     }
 
-    @Test(description = "_Health",retryAnalyzer = RetryAnalyser.class)
-    public void _Health() throws Exception {
+    @Test(description = "Health Renewal flow")
+    public void Health_Renewal() throws Exception {
         ninjaloginpage.ninja_MIS();
         create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
         String misID = junkpolicyl.misId.getText();
@@ -207,39 +208,43 @@ public class Renewal_Rollover extends TestBase {
         health_life_page.generalDetailsHealth("New","11-10-2024");
         health_life_page.proposerDetails("Mr");
         health_life_page.addMember();
-        WebCommands.staticSleep(4000);
-//        TC.saleDetailsmanual("11-10-2024");
-//        WebCommands.staticSleep(2000);
-//        TC.dateEndorsementDtails("20-10-2024","10-11-2024");
-//        tc_09_to_21_page.PremiumDetails();
-//        TC.qcDtails("Ready");
-//        WebCommands.staticSleep(2000);
-//        TC.policyDetailmanual();
-//        TC.backArrow.click();
-//        create.Motor_productCatagory_Status_insurer("Health","Issued","ONE_ASSIST","Car");
-//        String misID1 = junkpolicyl.misId.getText();
-//        System.out.println(misID1+"test");
-//        TC.generalDetails("New","11-10-2024");
-//        TC.proposerDetails("Mr");
-//        TC.vehicleDetailsRenewals("Comprehensive" , "MH-03-AA-1411" , "Fiat Base 500","Sports (1248 CC)" , "Car");
-////        TC.vehicleDetails1();
-//        WebCommands.staticSleep(4000);
-//        TC.saleDetailsmanual("08-10-2024");
-//        WebCommands.staticSleep(2000);
-//        TC.dateEndorsementDtails("09-10-2024","01-10-2025");
-//        tc_09_to_21_page.PremiumDetails();
-//        TC.qcDtails("Ready");
-//        TC.policyDetailmanual();
-//        TC.backArrow.click();
-//        junkpolicyl.JunkPolicy(misID1);
-//        TC.backArrow.click();
-//        junkpolicyl.JunkPolicy(misID);
+        WebCommands.staticSleep(2000);
+        health_life_page.saleDetailsmanual("11-10-2024");
+
+        WebCommands.staticSleep(2000);
+        health_life_page.dateEndorsementDtails("22-10-2023","22-10-2024");
+        health_life_page.premiumAndayment();
+        health_life_page.policyDetails();
+        health_life_page.qcDtails("Ready");
+        WebCommands.staticSleep(2000);
+        TC.policyDetailmanual();
+        TC.backArrow.click();
+        create.Motor_productCatagory_Health("Health","Issued","Bharti AXA General Insurance","");
+        String misID1 = junkpolicyl.misId.getText();
+        System.out.println(misID1+"test");
+        health_life_page.generalDetailsHealth("New","11-10-2024");
+        health_life_page.proposerDetails("Mr");
+        health_life_page.addMember();
+        WebCommands.staticSleep(2000);
+        health_life_page.saleDetailsmanual("11-10-2024");
+        WebCommands.staticSleep(2000);
+        health_life_page.dateEndorsementDtails("19-10-2024","19-10-2025");
+        health_life_page.premiumAndayment();
+        health_life_page.policyDetails();
+        health_life_page.qcDtails("Ready");
+        WebCommands.staticSleep(2000);
+        TC.policyDetailmanual();
+        health_life_page.potentialDuplicate();
+        TC.backArrow.click();
+        junkpolicyl.JunkPolicy(misID1);
+        TC.backArrow.click();
+        junkpolicyl.JunkPolicy(misID);
     }
 
     @AfterMethod()
     public void Close() {
 
-    driver.quit();
+//    driver.quit();
     }
 
 
