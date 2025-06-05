@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.IOException;
@@ -70,7 +71,7 @@ public class TC_1_12 extends TestBase {
     WebElement PIdatemanual;
     @FindBy(xpath = "//input[@id=\"AutoParsing_salesDetail.saleClosedDate\"]")
     WebElement saleclosedate;
-    @FindBy(xpath = "//input[@id=\"Motor_salesDetail.saleClosedDate\"]")
+    @FindBy(xpath = "//input[@id=\"Health_salesDetail.saleClosedDate\"]")
     WebElement saleclosedatemanual;
 
     @FindBy(xpath = "//input[@id=\"Motor_startDate\"]")
@@ -133,7 +134,7 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//button[text()=\"Parse & Save Sale\"]//parent::div")
     WebElement savebutton;
     @FindBy(xpath = "//button[text()=\"Save Sale\"]//parent::div")
-    WebElement savebuttonmanual;
+    public WebElement savebuttonmanual;
     @FindBy(xpath = "//input[@name=\"policyNumber\"]")
     WebElement policynumber;
 
@@ -160,10 +161,15 @@ public class TC_1_12 extends TestBase {
     @FindBy(id = "Health_issuanceDate")
     WebElement healthIssuanceDate;
 
+    @FindBy(xpath = "//div[text()=\"(View Mode)\"]")
+    WebElement viewMode;
+
 
     public TC_1_12() {
         PageFactory.initElements(driver, this);
     }
+
+
 
     public void basicDetails(String channelType, String bussinessType, String issuanceDate) {
 
@@ -183,6 +189,17 @@ public class TC_1_12 extends TestBase {
         WebCommands.staticSleep(2000);
 
     }
+
+    public void tmbrokercodecheckboxmanual() {
+
+        TestUtil.click(tmbrokercodecheckboxmanual, "Check box selected");
+        TestUtil.click(savebuttonmanual , "");
+        WebCommands.staticSleep(4000);
+        String viewModeText = viewMode.getText();
+        Assert.assertEquals(viewModeText , "(View Mode)");
+        System.out.println("Entry saved" + viewModeText);
+    }
+
 
 
     public void generalDetails(String bussinessType, String issuanceDate) {
@@ -261,7 +278,7 @@ public class TC_1_12 extends TestBase {
     public void policyDetailmanual() throws IOException {
 
 //      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+       FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
