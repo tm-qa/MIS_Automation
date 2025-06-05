@@ -2,7 +2,9 @@ package com.qa.turtlemint.pages.MIS_logic_page;
 
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
+import com.qa.turtlemint.util.LogUtils;
 import com.qa.turtlemint.util.TestUtil;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -199,7 +201,7 @@ public class mislogic extends TestBase {
     WebElement PaymentFrequency;
 
     @FindBy(xpath = "//label[text()='MIS ID']//..//following-sibling::div//input")
-    public WebElement MisID;
+    public static WebElement MisID;
 
     @FindBy(xpath = "//label[text()='Amount Due']//..//following-sibling::div//input")
     WebElement AmountDue;
@@ -222,8 +224,26 @@ public class mislogic extends TestBase {
     @FindBy(xpath = "//input[@id=\"Life_payment.policyPaymentType\"]//..//following-sibling::span")
     WebElement paymentTypeCheck;
 
-    JavascriptExecutor js = (JavascriptExecutor) driver;
+    @FindBy(xpath = "//td[text()='2']//..//span")
+    WebElement edit2nd;
 
+    @FindBy(xpath = "//span[@title=\"Unpaid\"]")
+    WebElement unpaid;
+
+    @FindBy(xpath = "//div[text()=\"Paid\"]")
+    WebElement paid;
+
+    @FindBy(xpath = "//input[@id=\"Payment Modal Config_actualPaymentDate\"]")
+    WebElement date;
+
+    @FindBy(xpath = "//td[@class=\"ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today\"]")
+    WebElement currntdate;
+
+    @FindBy(xpath = "//button[text()='Save']")
+    WebElement save;
+
+
+    JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
     public void PolicyDetails(String sale, String endDate) {
@@ -258,7 +278,7 @@ public class mislogic extends TestBase {
         TestUtil.sendKeys(enddate, String.valueOf(Keys.RETURN), "end Date select");
     }
 
-    public void PolicyHolderDetails(String dob, int PPT,int PT,String paymentType) throws IOException {
+    public void PolicyHolderDetails(String dob, int PPT, int PT, String paymentType) throws IOException {
         TestUtil.click(Life_typeOfBusiness, "");
         TestUtil.sendKeys(Life_typeOfBusinesss, String.valueOf(Keys.RETURN), "Life_typeOfBusiness clicked");
         TestUtil.click(Life_proposer, "");
@@ -279,16 +299,16 @@ public class mislogic extends TestBase {
         TestUtil.sendKeys(PaymentTerminyears, String.valueOf(PPT), "Payment Term in years 4");
         TestUtil.sendKeys(PolicyTerminyears, String.valueOf(PT), "Policy Term in years 4");
         TestUtil.sendKeys(benefitPayoutTerm, "4", "benefit Payout Term in years 4");
-        Assert.assertEquals(paymentTypeCheck.getText(),paymentType);
+        Assert.assertEquals(paymentTypeCheck.getText(), paymentType);
         TestUtil.getFullPageScreenShot();
         TestUtil.sendKeys(ModalPremium, "100", "ModalPremium 100");
         TestUtil.sendKeys(Modalgst, "100", "Modalgst");
         TestUtil.sendKeys(SumInsured, "1", "SumInsured");
         TestUtil.sendKeys(renewalGST, "100", "renewalGST");
 
-        Assert.assertEquals(netprem.getAttribute("value"),"1200");
-        Assert.assertEquals(servicetax.getAttribute("value"),"1200");
-        Assert.assertEquals(grossPrem.getAttribute("value"),"2400");
+        Assert.assertEquals(netprem.getAttribute("value"), "1200");
+        Assert.assertEquals(servicetax.getAttribute("value"), "1200");
+        Assert.assertEquals(grossPrem.getAttribute("value"), "2400");
         TestUtil.getFullPageScreenShot();
 
         TestUtil.click(Life_paymentpaymentmode, "Life_payment payment mode");
@@ -303,30 +323,51 @@ public class mislogic extends TestBase {
         WebCommands.staticSleep(2000);
         String currentDate = TestUtil.PresentDate();
         TestUtil.getFullPageScreenShot();
-        Assert.assertEquals(dateDATAQC.getAttribute("value"),currentDate);
-        System.out.println(currentDate+" Current Date verify");
+        Assert.assertEquals(dateDATAQC.getAttribute("value"), currentDate);
+        System.out.println(currentDate + " Current Date verify");
         WebCommands.staticSleep(2000);
 
         TestUtil.click(Life_manualQCStatuss, "yes select");
-      //  js.executeScript("arguments[0].click();", Life_manualQCStatuss);
+        //  js.executeScript("arguments[0].click();", Life_manualQCStatuss);
         TestUtil.click(Ready, "Ready select");
         TestUtil.click(Save, "Save select");
         TestUtil.click(PaymentSchedule, "Payment Schedule Clicked");
 
     }
 
-    public void verify(String rsikStartdate) throws IOException {
-        Assert.assertEquals(PaymentFrequency.getText(),"MONTHLY");
-        Assert.assertEquals(PremiumPaymentTerminyears.getAttribute("value"),"4");
-        Assert.assertEquals(PolicytermTerminyears.getAttribute("value"),"4");
-        Assert.assertEquals(netPremium.getAttribute("value"),"1200");
+    public void verify(String rsikStartdate,String padeToDate,String unpaidTopaidDAte) throws IOException {
+        Assert.assertEquals(PaymentFrequency.getText(), "MONTHLY");
+        Assert.assertEquals(PremiumPaymentTerminyears.getAttribute("value"), "4");
+        Assert.assertEquals(PolicytermTerminyears.getAttribute("value"), "4");
+        Assert.assertEquals(netPremium.getAttribute("value"), "1200");
         TestUtil.getFullPageScreenShot();
-        Assert.assertEquals(AmountDue.getAttribute("value"),"9400");
-        Assert.assertEquals(Noofinstallmentsdue.getAttribute("value"),"47");
-        Assert.assertEquals(InstallmentAmount.getAttribute("value"),"200");
-        Assert.assertEquals(PaidToDate.getAttribute("value"),"10-11-2019");
-        Assert.assertEquals(installment48.getText(),"48");
-        Assert.assertEquals(riststartDtaeof1stinstallment.getText(),rsikStartdate);
+        Assert.assertEquals(AmountDue.getAttribute("value"), "9400");
+        Assert.assertEquals(Noofinstallmentsdue.getAttribute("value"), "47");
+        Assert.assertEquals(InstallmentAmount.getAttribute("value"), "200");
+        Assert.assertEquals(PaidToDate.getAttribute("value"), padeToDate);
+        Assert.assertEquals(installment48.getText(), "48");
+        Assert.assertEquals(riststartDtaeof1stinstallment.getText(), rsikStartdate);
+
+        int sizeofunpaid = driver.findElements(By.xpath("//td[text()='Unpaid']")).size();
+        int sizeofDash = driver.findElements(By.xpath("//td[text()='-']")).size();
+
+        LogUtils.info("******************************** UnPaid = " + sizeofunpaid + "********************");
+        LogUtils.info("********************************  -(dash) count = " + sizeofDash + "********************");
+
+        Assert.assertEquals(sizeofunpaid, sizeofDash);
+        TestUtil.getFullPageScreenShot();
+
+        TestUtil.click(edit2nd, "click on 2nd installment which is unpaid");
+        TestUtil.click(unpaid, "edit unpaid");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(paid, "Paid");
+        TestUtil.click(date, "date ");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(currntdate, "current date");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(save, "save");
+        WebCommands.staticSleep(2000);
+        Assert.assertEquals(PaidToDate.getAttribute("value"), unpaidTopaidDAte);
         TestUtil.getFullPageScreenShot();
     }
 }

@@ -161,9 +161,10 @@ public class junk extends TestBase {
         WebCommands.staticSleep(2000);
         TestUtil.getFullPageScreenShot();
         try {
+            TestUtil.click(Yes, "Yes clicked");
 
         } catch (Exception e) {
-            TestUtil.click(Yes, "Yes clicked");
+
 
         }
         WebCommands.staticSleep(2000);
