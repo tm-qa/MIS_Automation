@@ -37,12 +37,12 @@ public class TC_14to_23 extends TestBase {
 
 
     @Test(retryAnalyzer = RetryAnalyser.class, description = "*** TC_13_14_16_17_18_19 ***Verify Details populated for Payment schedule when case status is issued. ****AND*** Verify if First installment has Due Date = RIsk start date for payment schedule.****AND*** Verify for Life if Net premium autopopulates when Modal Premium (without GST)  and payment frequency are entered.****AND*** Verify for Life if  Service Tax / GST autopopulates when Modal GST and payment frequency are entered.")
-    public void TC_13_14_16_17_18_19() throws Exception {
+    public void TC_13_14_16_17_18_19_20() throws Exception {
         ninjaloginpage.ninja_MIS();
         flow.Motor_productCatagory_Health("Life", "Issued", "Bajaj", "");
         logic.PolicyDetails("10-10-2019", "10-10-2022");
         logic.PolicyHolderDetails("10-10-1994",4,4,"Regular Pay");
-        logic.verify("10-10-2019");
+        logic.verify("10-10-2019","10-11-2019","10-12-2019");
 
 
         String misID = logic.MisID.getAttribute("value");
