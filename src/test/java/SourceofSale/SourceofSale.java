@@ -9,6 +9,7 @@ import com.qa.turtlemint.pages.manualautoparse.Health_Life_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_09_TO_21_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_1_12;
 import com.qa.turtlemint.util.RetryAnalyser;
+import com.qa.turtlemint.util.TestUtil;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -48,7 +49,6 @@ public class SourceofSale extends TestBase {
         TC.generalDetails("New", "11-10-2024");
         TC.proposerDetails("Mr");
         TC.vehicleDetailsRenewals("Comprehensive", "MH-03-AA-1001", "Fiat Base 500", "Sports (1248 CC)", "Car");
-//        TC.vehicleDetails1();
         WebCommands.staticSleep(4000);
         TC.saleDetailsmanualPartner("11-10-2024");
         WebCommands.staticSleep(2000);
@@ -58,7 +58,7 @@ public class SourceofSale extends TestBase {
         WebCommands.staticSleep(2000);
         TC.policyDetailmanual();
         TC.salesOfSales();
-        TC.backArrow.click();
+        TestUtil.getFullPageScreenShot();
 
     }
 
@@ -81,8 +81,7 @@ public class SourceofSale extends TestBase {
         WebCommands.staticSleep(2000);
         TC.policyDetailmanual();
         TC.salesOfSales();
-        TC.backArrow.click();
-
+        TestUtil.getFullPageScreenShot();
     }
 
     @Test(description = "Health source Of Sale", retryAnalyzer = RetryAnalyser.class)
@@ -104,7 +103,7 @@ public class SourceofSale extends TestBase {
         WebCommands.staticSleep(2000);
         TC.policyDetailmanual();
         TC.salesOfSales();
-        TC.backArrow.click();
+        TestUtil.getFullPageScreenShot();
 
     }
 

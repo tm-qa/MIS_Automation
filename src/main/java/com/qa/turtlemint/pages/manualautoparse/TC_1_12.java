@@ -206,7 +206,8 @@ public class TC_1_12 extends TestBase {
     }
 
 
-    public void salesOfSales(){
+    public void salesOfSales() throws IOException {
+        TestUtil.getFullPageScreenShot();
         WebCommands.staticSleep(2000);
         String sourceOfSaleType = sourceOfSale.getText();
         Assert.assertEquals(sourceOfSaleType , "Posp");
@@ -221,6 +222,7 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(SaveSale, "Save sale clicked");
         WebCommands.staticSleep(2000);
         Assert.assertEquals(junkassert.getText(), "Junk");
+        TestUtil.getFullPageScreenShot();
         System.out.println("Policy Successfully junked");
 
     }
