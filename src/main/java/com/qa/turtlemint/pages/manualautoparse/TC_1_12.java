@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 
@@ -71,7 +72,7 @@ public class TC_1_12 extends TestBase {
     WebElement PIdatemanual;
     @FindBy(xpath = "//input[@id=\"AutoParsing_salesDetail.saleClosedDate\"]")
     WebElement saleclosedate;
-    @FindBy(xpath = "//input[@id=\"Health_salesDetail.saleClosedDate\"]")
+    @FindBy(xpath = "//input[@id=\"Motor_salesDetail.saleClosedDate\"]")
     WebElement saleclosedatemanual;
 
     @FindBy(xpath = "//input[@id=\"Motor_startDate\"]")
@@ -149,6 +150,9 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//div[text()='Website']")
     WebElement website;
 
+    @FindBy(xpath = "//div[text()='Partner']")
+    WebElement partner;
+
     @FindBy(xpath = "//*[@data-icon=\"close\"]")
     WebElement dublocatePopup;
 
@@ -164,12 +168,62 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//div[text()=\"(View Mode)\"]")
     WebElement viewMode;
 
+    @FindBy(xpath = "//div[@id=\"Motor_salesDetail.intermediaryName\"]//input")
+    WebElement dpName ;
+
+
+    @FindBy(xpath = "//div[text()=\"test for selling gi/ li - [DP-1585975]\"]")
+    WebElement selectDp ;
+
+    @FindBy(xpath = "//div[text()=\"mis life partner - [DP-2237558]\"]")
+    WebElement selectDpProd ;
+
+    @FindBy(xpath = "//span[@title=\"Posp\"]")
+    WebElement sourceOfSale ;
+
+    @FindBy(xpath = "//span[text()='Junk']")
+    WebElement junkassert;
+
+
+    @FindBy(xpath = "//label[@title=\"Policy Status\"]//..//..//following-sibling::div")
+    WebElement getPolicyStatus;
+
+    @FindBy(xpath = "//input[@name=\"opsDetail.comments\"]")
+    WebElement comentforJunk;
+
+    @FindBy(xpath = "//button[text()='Save Sale']")
+    WebElement SaveSale;
+
+    @FindBy(xpath = "//div[text()='Junk']")
+    WebElement junk;
+
+    @FindBy(xpath = "//img[@alt=\"Edit\"]")
+    WebElement Edit;
+
 
     public TC_1_12() {
         PageFactory.initElements(driver, this);
     }
 
 
+    public void salesOfSales(){
+        WebCommands.staticSleep(2000);
+        String sourceOfSaleType = sourceOfSale.getText();
+        Assert.assertEquals(sourceOfSaleType , "Posp");
+        WebCommands.staticSleep(5000);
+        TestUtil.click(Edit, "Edit button clicked");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(getPolicyStatus, "policy Status clicked");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(junk, "junk selected");
+        WebCommands.staticSleep(1000);
+        TestUtil.sendKeys(comentforJunk, "Dummy policy for Automation Test", "comment entered");
+        TestUtil.click(SaveSale, "Save sale clicked");
+        WebCommands.staticSleep(2000);
+        Assert.assertEquals(junkassert.getText(), "Junk");
+        System.out.println("Policy Successfully junked");
+
+    }
 
     public void basicDetails(String channelType, String bussinessType, String issuanceDate) {
 
@@ -252,6 +306,32 @@ public class TC_1_12 extends TestBase {
 
     }
 
+    public void saleDetailsmanualPartner(String salecloseDate) {
+
+        TestUtil.click(ChannelType, " Channel Type selected");
+        TestUtil.click(partner, " website selected from channel type dropdown");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
+        saleclosedatemanual.sendKeys(Keys.ENTER);
+        TestUtil.getScreenShot();
+
+        String currentUrl = driver.getCurrentUrl();
+        String baseUrl = currentUrl.split(".com")[0] + ".com";
+        System.out.println("Base URL: " + baseUrl);
+        if (baseUrl.equals("https://ninja.sanity.turtle-feature.com")) {
+
+            TestUtil.sendKeys(dpName, "selling gi" , "");
+            WebCommands.staticSleep(2000);
+            TestUtil.click(selectDp , "");
+        }
+
+        else {
+
+            TestUtil.sendKeys(dpName, "mis life partn" , "");
+            TestUtil.click(selectDpProd , "");
+        }
+    }
+
     public void saleDetailsmanualRenewals(String salecloseDate) {
 
         WebCommands.staticSleep(2000);
@@ -278,7 +358,7 @@ public class TC_1_12 extends TestBase {
     public void policyDetailmanual() throws IOException {
 
 //      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
-       FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+      FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
         WebCommands.staticSleep(2000);
         TestUtil.click(policytype, "policy pdf uploaded");
         TestUtil.click(okbutton, "Clicked on ok button");
@@ -484,6 +564,5 @@ public class TC_1_12 extends TestBase {
         TestUtil.click(DQ, DataQC + " Data QC selected");
         TestUtil.getScreenShot();
     }
-
 
 }

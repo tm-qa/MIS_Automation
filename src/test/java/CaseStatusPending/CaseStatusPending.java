@@ -9,6 +9,7 @@ import com.qa.turtlemint.pages.manualautoparse.Health_Life_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_09_TO_21_Page;
 import com.qa.turtlemint.pages.manualautoparse.TC_1_12;
 import com.qa.turtlemint.util.RetryAnalyser;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,6 @@ public class CaseStatusPending extends TestBase {
     public TC_1_12 TC;
     public TC_09_TO_21_Page tc_09_to_21_page;
     public Health_Life_Page health_life_page;
-
 
     @BeforeMethod()
     public void start() throws Exception {
@@ -137,6 +137,10 @@ public class CaseStatusPending extends TestBase {
         TC.savebuttonmanual.click();
         TC.backArrow.click();
         junkpolicyl.JunkPolicy(misID);
+    }
+    @AfterMethod()
+    public void Close() {
+        driver.quit();
     }
 
 }

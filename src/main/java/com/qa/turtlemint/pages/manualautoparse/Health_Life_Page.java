@@ -229,6 +229,17 @@ public class Health_Life_Page extends TestBase {
      @FindBy(xpath = "//span[text()=\"Renewal\"]")
      WebElement renewal ;
 
+    @FindBy(xpath = "//div[text()='Partner']")
+    WebElement partner;
+
+    @FindBy(xpath = "//div[@id=\"Health_salesDetail.intermediaryName\"]//input")
+    WebElement dpName ;
+
+    @FindBy(xpath = "//div[text()=\"test for selling gi/ li - [DP-1585975]\"]")
+    WebElement selectDp ;
+
+    @FindBy(xpath = "//div[text()=\"mis life partner - [DP-2237558]\"]")
+    WebElement selectDpProd ;
 
     public Health_Life_Page() {
         PageFactory.initElements(driver, this);
@@ -265,10 +276,25 @@ public class Health_Life_Page extends TestBase {
         TestUtil.click(planType , "");
         WebCommands.staticSleep(500);
         TestUtil.click(planTypeSelect , "");
+    }
+
+    public void policyDetailsSos (){
+        WebCommands.staticSleep(2000);
+        TestUtil.click(coverType , "");
+        WebCommands.staticSleep(1000);
+        TestUtil.click(coverTypeSelect , "");
+        TestUtil.click(tmPlanId , "");
+        WebCommands.staticSleep(500);
+        TestUtil.click(tmPlanIdType , "");
+        TestUtil.sendKeys(optionName , "test new" , "");
+        WebCommands.staticSleep(500);
+        TestUtil.sendKeys(sumInsured , "500000" , "");
+        TestUtil.click(planType , "");
+        WebCommands.staticSleep(500);
+        TestUtil.click(planTypeSelect , "");
 
 
     }
-
     public void premiumAndayment (){
         WebCommands.staticSleep(2000);
         TestUtil.click(paymentFrequency , "");
@@ -318,7 +344,32 @@ public class Health_Life_Page extends TestBase {
         TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
         saleclosedatemanual.sendKeys(Keys.ENTER);
         TestUtil.getScreenShot();
+    }
 
+    public void saleDetailsmanualPartner(String salecloseDate) {
+
+        TestUtil.click(ChannelType, " Channel Type selected");
+        TestUtil.click(partner, " website selected from channel type dropdown");
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(saleclosedatemanual, salecloseDate, salecloseDate + " Sale close date Entered");
+        saleclosedatemanual.sendKeys(Keys.ENTER);
+        TestUtil.getScreenShot();
+
+        String currentUrl = driver.getCurrentUrl();
+        String baseUrl = currentUrl.split(".com")[0] + ".com";
+        System.out.println("Base URL: " + baseUrl);
+        if (baseUrl.equals("https://ninja.sanity.turtle-feature.com")) {
+
+            TestUtil.sendKeys(dpName, "selling gi/" , "");
+            WebCommands.staticSleep(2000);
+            TestUtil.click(selectDp , "");
+        }
+
+        else {
+
+            TestUtil.sendKeys(dpName, "mis life partn" , "");
+            TestUtil.click(selectDpProd , "");
+        }
     }
 
     public void proposerDetails(String proposerTitle) {
