@@ -342,6 +342,19 @@ public class TC_09_TO_21_Page extends TestBase {
         TestUtil.sendKeys(serviceTax, "1", "Basic_OD_premium 1 entered");
         TestUtil.sendKeys(gross_prem, "1", "Basic_OD_premium 1 entered");
     }
+    public void PremiumDetailsSos(){
+        js.executeScript("arguments[0].scrollIntoView(true);", NCB);
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(NCB, "1", "NCB 1 entered");
+        TestUtil.sendKeys(IDV_SumInsured, "500", "IDV_SumInsured 1 entered");
+        TestUtil.sendKeys(Basic_OD_premium, "1", "Basic_OD_premium 1 entered");
+        TestUtil.sendKeys(total_OD_premium, "1", "total_OD_premium 1 entered");
+        TestUtil.sendKeys(basic_tp_premium, "1", "basic_tp_premium 1 entered");
+        TestUtil.sendKeys(total_tp_premium, "1", "total_tp_premium 1 entered");
+        TestUtil.sendKeys(net_premium, "1", "Basic_OD_premium 1 entered");
+        TestUtil.sendKeys(serviceTax, "1", "Basic_OD_premium 1 entered");
+        TestUtil.sendKeys(gross_prem, "1", "Basic_OD_premium 1 entered");
+    }
     public void QualityCheck(){
         TestUtil.click(Data_QC, " Data_QC dropdown clicked ");
         TestUtil.click(ready, " ready selected from Data_QC dropdown  ");
