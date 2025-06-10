@@ -67,7 +67,7 @@ public class LoginPage extends TestBase {
         WebCommands.staticSleep(3000);
         TestUtil.sendKeys(emailgoogle, String.valueOf(Keys.RETURN), "email Id entered");
         WebCommands.staticSleep(3000);
-        TestUtil.sendKeys(passworgoogle, "Turtle@2k26", "Password entered");
+        TestUtil.sendKeys(passworgoogle, "Turtle@2k25", "Password entered");
         WebCommands.staticSleep(3000);
         TestUtil.sendKeys(passworgoogle, String.valueOf(Keys.RETURN), "Password entered");
         WebCommands.staticSleep(8000);
@@ -88,8 +88,8 @@ public class LoginPage extends TestBase {
 
 
         TestUtil.getScreenShot();
-        driver.get(System.getProperty("ninjaurl"));
-//        driver.get(prop.getProperty("ninjaurl"));
+//        driver.get(System.getProperty("ninjaurl"));
+       driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(4000);
         TestUtil.click(SignInbtn, "Sign in button clicked");
@@ -116,11 +116,12 @@ public class LoginPage extends TestBase {
     public void ValidateLogin(String username, String otp) {
         String strUrl = driver.getCurrentUrl();
         LogUtils.info("Opened Website: " + strUrl);
+        TestUtil.click(MobileNumber , " cjhe");
         TestUtil.sendKeys(MobileNumber, username, "Mobile Number Entered");
         TestUtil.click(GetOTP, "Continue pressed");
         TestUtil.sendKeys(OTPField, otp, "OTP Entered");
         TestUtil.click(VerifyOTPBtn, "Login Successful");
-        WebCommands.staticSleep(4000);
+        WebCommands.staticSleep(8000);
         TestUtil.click(SellBtn , "click on sell button");
     }
 
