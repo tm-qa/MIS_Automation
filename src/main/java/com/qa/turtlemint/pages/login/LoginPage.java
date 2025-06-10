@@ -93,7 +93,8 @@ public class LoginPage extends TestBase {
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(4000);
         TestUtil.click(SignInbtn, "Sign in button clicked");
-        WebCommands.staticSleep(4000);
+        TestUtil.getScreenShot();
+        WebCommands.staticSleep(8000);
         TestUtil.getScreenShot();
     }
 
