@@ -200,9 +200,36 @@ public class TC_1_12 extends TestBase {
     @FindBy(xpath = "//img[@alt=\"Edit\"]")
     WebElement Edit;
 
+    @FindBy(xpath = "//input[@id=\"Motor_multiyear\"]")
+    public WebElement multiyearCheckBox ;
+
+    @FindBy(xpath = "//input[@id=\"Motor_odRiskStartDate\"]")
+    WebElement odRiskStartDate;
+
+    @FindBy(xpath = "//input[@id=\"Motor_odRiskEndDate\"]")
+    WebElement odRiskEndDate;
+
+    @FindBy(xpath = "//input[@id=\"Motor_tpRiskStartDate\"]")
+    WebElement tpRiskStartDate;
+
+    @FindBy(xpath = "//input[@id=\"Motor_tpRiskEndDate\"]")
+    WebElement tpRiskEndDate;
 
     public TC_1_12() {
         PageFactory.initElements(driver, this);
+    }
+
+
+    public void multiYear(String CuurentDate , String dateFur ){
+
+        Assert.assertTrue(multiyearCheckBox.isSelected());
+        String odRiskStartDate1 = odRiskStartDate.getAttribute("value");
+        String odRiskEndDate2 = odRiskEndDate.getAttribute("value");
+        Assert.assertEquals(odRiskStartDate1 , CuurentDate);
+        WebCommands.staticSleep(2000);
+        Assert.assertEquals(odRiskEndDate2 , dateFur);
+
+
     }
 
 
@@ -357,6 +384,17 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
     }
 
+    public void policyDetailmanual1() throws IOException {
+//        FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
+        FileUpload.sendKeys("/home/ubuntu/storage/dog.pdf");
+        WebCommands.staticSleep(2000);
+        TestUtil.click(policytype, "policy pdf uploaded");
+        TestUtil.click(okbutton, "Clicked on ok button");
+        WebCommands.staticSleep(2000);
+        TestUtil.getFullPageScreenShot();
+
+    }
+
     public void policyDetailmanual() throws IOException {
 
 //      FileUpload.sendKeys("/Users/sayali/Desktop/abcd.pdf");
@@ -411,6 +449,16 @@ public class TC_1_12 extends TestBase {
         TestUtil.sendKeys(regisNumber, registrationNumber, "Registration number entered");
         TestUtil.getScreenShot();
         WebCommands.staticSleep(2000);
+    }
+
+
+    public void vehicleDetailsMultiYear(String productName ) throws InterruptedException {
+        WebCommands.staticSleep(2000);
+        TestUtil.click(productNamedrop, " Product name dropdown clicked");
+        WebElement PN = driver.findElement(By.xpath("//div[@title='" + productName + "']"));
+        TestUtil.click(PN, productName + " Procduct name selected");
+        WebCommands.staticSleep(2000);
+
     }
 
     public void vehicleDetailsRenewals(String productName , String regiNumber,String makeModel , String variant, String vehiclestype ) throws InterruptedException {
@@ -531,8 +579,18 @@ public class TC_1_12 extends TestBase {
         TestUtil.getScreenShot();
     }
 
+    public void dateEndorsementDtailsTp(String riskstart, String riskend) {
+        WebCommands.staticSleep(2000);
+        TestUtil.sendKeys(tpRiskStartDate, riskstart, riskstart + " Sale close date Entered");
+        tpRiskStartDate.sendKeys(Keys.ENTER);
+        TestUtil.sendKeys(tpRiskEndDate, riskend, riskend + " Sale close date Entered");
+        tpRiskEndDate.sendKeys(Keys.ENTER);
+        TestUtil.getScreenShot();
+        WebCommands.staticSleep(2000);
+    }
 
     public void dateEndorsementDtails(String riskstart, String riskend) {
+        WebCommands.staticSleep(2000);
         TestUtil.sendKeys(riskstartdate, riskstart, riskstart + " Sale close date Entered");
         riskstartdate.sendKeys(Keys.ENTER);
         TestUtil.sendKeys(riskenddate, riskend, riskend + " Sale close date Entered");
