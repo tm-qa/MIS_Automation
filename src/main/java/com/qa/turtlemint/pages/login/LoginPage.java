@@ -92,11 +92,8 @@ public class LoginPage extends TestBase {
 //       driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(4000);
-        TestUtil.click(SignInbtn, "Sign in button clicked");
-        WebCommands.staticSleep(4000);
-        driver.switchTo().frame(0);
-        WebCommands.staticSleep(4000);
-        TestUtil.getScreenShot();
+        SignInbtn.click();
+      //  TestUtil.click(SignInbtn, "Sign in button clicked");
         WebCommands.staticSleep(8000);
         TestUtil.getScreenShot();
     }
