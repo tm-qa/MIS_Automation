@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 
 
 @Listeners(iTestListener.class)
-@Test(groups = {"Mis_Full", "BI_flow"},retryAnalyzer = RetryAnalyser.class)
+@Test(groups = {"Mis_Full", "BI_flow"}, retryAnalyzer = RetryAnalyser.class)
 public class BI extends TestBase {
     public LoginPage ninjaloginpage;
     BI_pages bi;
@@ -23,19 +23,26 @@ public class BI extends TestBase {
         super();
     }
 
-    @BeforeMethod()
+    @BeforeClass()
     public void start() throws Exception {
         initialization();
         ninjaloginpage = new LoginPage();
         flow = new Mis_newSale();
         bi = new BI_pages();
         id = new junk();
+        ninjaloginpage.ninja_PI();
+    }
+
+    @BeforeMethod
+    public void loginless() {
+        driver.get(System.getProperty("ninjaurl")+"policy-issuance");
+        //    driver.get(prop.getProperty("ninjaurl")+"policy-issuance);
+
     }
 
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-TW Flow  - HDFC ergo")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "TC_14to_23-TW Flow  - HDFC ergo")
     public void TC_01() throws Exception {
-        ninjaloginpage.ninja_PI();
         flow.PI_productCatagory_Status_insurer("TW", "HDFC ergo");
         bi.PolicyCreateForBI("TW");
         String policyid = id.policyID.getText();
@@ -44,13 +51,13 @@ public class BI extends TestBase {
         id.policyid(policyid);
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"TW");
+        id.JunkPolicyBI(misID, "TW");
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-TW  - Autoparse Flow  - Bajaj")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "TC_14to_23-TW  - Autoparse Flow  - Bajaj")
     public void TC_02() throws Exception {
-        ninjaloginpage.ninja_PI();
+       // ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("TW", "Bajaj");
         bi.PolicyCreateForBI("TW");
@@ -62,54 +69,54 @@ public class BI extends TestBase {
 
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"TW");
+        id.JunkPolicyBI(misID, "TW");
 
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-FW Flow  - L&T")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "TC_14to_23-FW Flow  - L&T")
     public void TC_03() throws Exception {
-        ninjaloginpage.ninja_PI();
+       // ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("FW", "L&T");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"FW");
+        id.JunkPolicyBI(misID, "FW");
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyser.class, description = "BI-FW Flow  - HDFC Ergo Health")
+    @Test(retryAnalyzer = RetryAnalyser.class, description = "TC_14to_23-FW Flow  - HDFC Ergo Health")
     public void TC_04() throws Exception {
-        ninjaloginpage.ninja_PI();
+      //  ninjaloginpage.ninja_PI();
         // ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_Status_insurer("FW", "HDFC Ergo Health");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"FW");
+        id.JunkPolicyBI(misID, "FW");
     }
 
     @Test(retryAnalyzer = RetryAnalyser.class, description = "Life Flow  - HDFC Ergo Health")
     public void TC_05_12() throws Exception {
-        ninjaloginpage.ninja_PI();
+      //  ninjaloginpage.ninja_PI();
         //ninjaloginpage.ninja_MIS();
         flow.PI_productCatagory_HealtLife("LIFE", "Bajaj");
         bi.PolicyCreateForBI_LIfe();
         bi.PolicyUploadforBILIFE();
         String misID = id.idBI.getAttribute("value");
         System.out.println("**********************************    " + misID + "     *********************************");
-        id.JunkPolicyBI(misID,"life");
+        id.JunkPolicyBI(misID, "life");
 
     }
 
     @Test(retryAnalyzer = RetryAnalyser.class, description = "TW Flow  - NAVI")
     public void TC_06() throws Exception {
-        ninjaloginpage.ninja_PI();
+      //  ninjaloginpage.ninja_PI();
         //  ninjaloginpage.ninja_MIS();
-       // flow.Motor_productCatagory_Status_insurer("TW", "Issued", "NAVI", "TW");
+        // flow.Motor_productCatagory_Status_insurer("TW", "Issued", "NAVI", "TW");
         flow.PI_productCatagory_Status_insurer("TW", "NAVI");
         bi.PolicyCreateForBI("TW");
         String policyid = id.policyID.getText();
@@ -120,20 +127,20 @@ public class BI extends TestBase {
 
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"TW");
+        id.JunkPolicyBI(misID, "TW");
 
     }
 
     @Test(retryAnalyzer = RetryAnalyser.class, description = "FW Flow  - NAVI")
     public void TC_07() throws Exception {
         // ninjaloginpage.ninja_MIS();
-        ninjaloginpage.ninja_PI();
+       // ninjaloginpage.ninja_PI();
         flow.PI_productCatagory_Status_insurer("FW", "NAVI");
         bi.PolicyCreateForBI("FW");
         bi.PolicyUploadforBI();
         String misID = id.idBI.getAttribute("value");
         System.out.println("*****************    " + misID + "     *******************");
-        id.JunkPolicyBI(misID,"FW");
+        id.JunkPolicyBI(misID, "FW");
 
     }
 
@@ -146,10 +153,10 @@ public class BI extends TestBase {
 //    }
 
 
-        @AfterMethod()
-        public void Close() {
+    @AfterClass()
+    public void Close() {
+        driver.quit();
 
-
-        }
+    }
 
 }
