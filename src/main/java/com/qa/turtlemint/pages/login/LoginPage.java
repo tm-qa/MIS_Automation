@@ -60,6 +60,9 @@ public class LoginPage extends TestBase {
     @FindBy(id = "container-next-btn")
     WebElement NextButton;
     public void NinjaLogin() throws InterruptedException {
+        TestUtil.click(SignInbtn, "Sign in button clicked");
+        WebCommands.staticSleep(4000);
+        TestUtil.getScreenShot();
         driver.get("https://accounts.google.com/");
         WebCommands.staticSleep(3000);
 
@@ -92,8 +95,8 @@ public class LoginPage extends TestBase {
 //       driver.get(prop.getProperty("ninjaurl"));
         System.out.println(driver.getCurrentUrl());
         WebCommands.staticSleep(4000);
-        TestUtil.click(SignInbtn, "Sign in button clicked");
-        TestUtil.getScreenShot();
+        SignInbtn.click();
+      //  TestUtil.click(SignInbtn, "Sign in button clicked");
         WebCommands.staticSleep(8000);
         TestUtil.getScreenShot();
     }
