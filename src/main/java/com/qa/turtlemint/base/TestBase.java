@@ -77,8 +77,8 @@ public class TestBase {
             driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
 
-//            driver.get(System.getProperty("ninjaurl"));
-             driver.get(prop.getProperty("ninjaurl"));
+            driver.get(System.getProperty("ninjaurl"));
+//             driver.get(prop.getProperty("ninjaurl"));
         }
     }
 }
